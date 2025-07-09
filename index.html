@@ -32,8 +32,6 @@
   </ul>
 </div>
 
-
-  
  <script>
 const mapping = {
   "1111": "groupe1.html",
@@ -44,28 +42,33 @@ const mapping = {
 };
 
 function verifyCode() {
-  
-      const code = document.getElementById("codeInput").value.trim();
-      const error = document.getElementById("error");
+  const code = document.getElementById("codeInput").value.trim();
+  const error = document.getElementById("error");
 
-      const horodatage = new Date().toLocaleString("fr-FR");
-      const data = {
-        horodatage,
-        groupe: code,
-        etape: "Accueil",
-        action: "Code entré",
-        donnee: code,
-        ip: ""
-      };
-
-      envoyerVersGoogleSheet(data);
-     
-  
-  if (mapping[code]) {
-     window.location.href = mapping[code];
-  } else {
+  // Показать ошибку, если код неправильный
+  if (!mapping[code]) {
     error.style.display = "block";
+    return;
   }
+
+  // Скрыть ошибку если код правильный
+  error.style.display = "none";
+
+  // Отправка данных в Google Sheets
+  const horodatage = new Date().toLocaleString("fr-FR");
+  const data = {
+    horodatage,
+    groupe: code,
+    etape: "Accueil",
+    action: "Code entré",
+    donnee: code,
+    ip: ""
+  };
+
+  envoyerVersGoogleSheet(data);
+
+  // Переход по адресу
+  window.location.href = mapping[code];
 }
 
 function envoyerVersGoogleSheet(data) {
@@ -81,6 +84,7 @@ function envoyerVersGoogleSheet(data) {
   .catch(err => console.error('Erreur:', err));
 }
 </script>
+
 
   
 </body>
