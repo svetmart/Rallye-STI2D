@@ -44,28 +44,25 @@ const mapping = {
 };
 
 function verifyCode() {
-  const code = document.getElementById("codeInput").value.trim();
-  const error = document.getElementById("error");
+  
+      const code = document.getElementById("codeInput").value.trim();
+      const error = document.getElementById("error");
 
-  const horodatage = new Date().toLocaleString("fr-FR");
-  const groupe = code;
-  const etape = "Accueil";
-  const action = "Code entré";
-  const donnee = code;
-  const ip = ""; // Если вы хотите получить IP, можно подключить внешний API
+      const horodatage = new Date().toLocaleString("fr-FR");
+      const data = {
+        horodatage,
+        groupe: code,
+        etape: "Accueil",
+        action: "Code entré",
+        donnee: code,
+        ip: ""
+      };
 
-  const data = { horodatage, groupe, etape, action, donnee, ip };
-  envoyerVersGoogleSheet(data);
-
+      envoyerVersGoogleSheet(data);
+     
+  
   if (mapping[code]) {
-    //отправляем данные в таблицу
-    envoyerVersGoogleSheet({
-      groupe: code,
-      etape: "Accueil",
-      action "Code entré",
-      ip: ""
-    });
-    window.location.href = mapping[code];
+     window.location.href = mapping[code];
   } else {
     error.style.display = "block";
   }
