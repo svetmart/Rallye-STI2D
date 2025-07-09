@@ -52,5 +52,21 @@
       }
     }
   </script>
+
+  <script>
+function envoyerVersGoogleSheet(data) {
+  fetch('https://script.google.com/macros/s/AKfycbx5XMGxrHLzy9C-aDZpgrs4holdOq0gM-4HEPkpi_5pHHgjZ3Ac7Pp0U1O8tbEMjLc6/exec', {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: { 'Content-Type': 'application/json' }
+  })
+  .then(res => res.text())
+  .then(rep => console.log('Réponse Google Sheets:', rep))
+  .catch(err => console.error('Erreur:', err));
+}
+
+</script>
+
+  
 </body>
 </html>
