@@ -58,6 +58,13 @@ function verifyCode() {
   envoyerVersGoogleSheet(data);
 
   if (mapping[code]) {
+    //отправляем данные в таблицу
+    envoyerVersGoogleSheet({
+      groupe: code,
+      etape: "Accueil",
+      action "Code entré",
+      ip: ""
+    });
     window.location.href = mapping[code];
   } else {
     error.style.display = "block";
