@@ -10,17 +10,7 @@
   <p>Page dédiée à votre groupe.</p>
   <h2>Votre thème : Transport et mobilité</h2>
 
-  <script> // код отправляет информацию в таблицу
-  // Пример: когда ученик ввёл правильный код
-   envoyerVersGoogleSheet({
-      groupe: code,
-      etape: "Accueil",
-      action "Code entré",
-      ip: ""
-    });
-</script>
-
-
+  
   <p>
 Vous devez visiter 4 lieux et répondre à une question à chaque étape.
 Notez chaque réponse sur votre fiche. À la fin du rallye, vous devrez les annoncer devant tous les élèves de STI2D.
@@ -61,6 +51,34 @@ Dans 5 minutes, vous recevrez le premier indice, puis un deuxième indice 5 minu
 
     <button type="submit">Envoyer</button>
   </form>
+  <script>
+function envoyerVersGoogleSheet(data) {
+  fetch('https://script.google.com/macros/s/AKfycbx5XMGxrHLzy9C-aDZpgrs4holdOq0gM-4HEPkpi_5pHHgjZ3Ac7Pp0U1O8tbEMjLc6/exec', {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(res => res.text())
+  .then(rep => console.log('Réponse Google Sheets:', rep))
+  .catch(err => console.error('Erreur:', err));
+}
+
+// Отправка информации при загрузке страницы
+window.addEventListener("DOMContentLoaded", () => {
+  const horodatage = new Date().toLocaleString("fr-FR");
+  envoyerVersGoogleSheet({
+    horodatage,
+    groupe: "1111",
+    etape: "Page groupe 1",
+    action: "Page ouverte",
+    donnee: "",
+    ip: ""
+  });
+});
+</script>
+
 </body>
 </html>
 
