@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Accueil</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <img src="lycee_hyrome.jpg" alt="Lycée de l'Hyrôme" class="header">
+  <h1>Bienvenue au Rallye Hyrôme 2025 1STI2D / TSTI2D</h1>
+  <p>Découverte de la ville de Chemillé aujourd’hui et autrefois.</p>
+  <div class="container">
+    <p>Entrez le code de votre groupe :</p>
+    <input type="text" id="codeInput" placeholder="Ex : 1111">
+    <button onclick="verifierCode()">Entrer</button>
+    <p id="error">Code incorrect. Essayez encore.</p>
+  </div>
+  <script>
+    function verifierCode() {
+      const code = document.getElementById("codeInput").value;
+      const error = document.getElementById("error");
+      const mapping = {
+        "1111": "groupe1.html",
+        "2222": "groupe2.html",
+        "3333": "groupe3.html",
+        "4444": "groupe4.html",
+        "5555": "groupe5.html"
+      };
+      if (mapping[code]) {
+        window.location.href = mapping[code];
+      } else {
+        error.style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>

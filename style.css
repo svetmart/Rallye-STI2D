@@ -1,0 +1,32 @@
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #e8f0fe;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  margin-top: 40px;
+}
+input {
+  padding: 10px;
+  font-size: 16px;
+}
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #3366cc;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+#error {
+  color: red;
+  display: none;
+  margin-top: 10px;
+}
+img.header {
+  max-width: 100%;
+  height: auto;
+}
