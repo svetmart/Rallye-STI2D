@@ -34,37 +34,48 @@
 
 
   
-  <script>
-    function verifierCode() {
-      const code = document.getElementById("codeInput").value;
-      const error = document.getElementById("error");
-      const mapping = {
-        "1111": "groupe1.html",
-        "2222": "groupe2.html",
-        "3333": "groupe3.html",
-        "4444": "groupe4.html",
-        "5555": "groupe5.html"
-      };
-      if (mapping[code]) {
-        window.location.href = mapping[code];
-      } else {
-        error.style.display = "block";
-      }
-    }
-  </script>
+ <script>
+const mapping = {
+  "1111": "groupe1.html",
+  "2222": "groupe2.html",
+  "3333": "groupe3.html",
+  "4444": "groupe4.html",
+  "5555": "groupe5.html",
+};
 
-  <script>
+function verifyCode() {
+  const code = document.getElementById("codeInput").value.trim();
+  const error = document.getElementById("error");
+
+  const horodatage = new Date().toLocaleString("fr-FR");
+  const groupe = code;
+  const etape = "Accueil";
+  const action = "Code entré";
+  const donnee = code;
+  const ip = ""; // Если вы хотите получить IP, можно подключить внешний API
+
+  const data = { horodatage, groupe, etape, action, donnee, ip };
+  envoyerVersGoogleSheet(data);
+
+  if (mapping[code]) {
+    window.location.href = mapping[code];
+  } else {
+    error.style.display = "block";
+  }
+}
+
 function envoyerVersGoogleSheet(data) {
-  fetch('https://script.google.com/macros/s/AKfycbx5XMGxrHLzy9C-aDZpgrs4holdOq0gM-4HEPkpi_5pHHgjZ3Ac7Pp0U1O8tbEMjLc6/exec', {
+  fetch('https://script.google.com/macros/s/AKfyc...ВАШ_СКРИПТ_URL.../exec', {
     method: 'POST',
     body: JSON.stringify(data),
-    headers: { 'Content-Type': 'application/json' }
+    headers: {
+      'Content-Type': 'application/json'
+    }
   })
   .then(res => res.text())
   .then(rep => console.log('Réponse Google Sheets:', rep))
   .catch(err => console.error('Erreur:', err));
 }
-
 </script>
 
   
