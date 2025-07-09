@@ -13,8 +13,8 @@
   <div class="container">
     <p>Entrez le code de votre groupe :</p>
     <input type="text" id="codeInput" placeholder="Ex : 1111">
-    <button onclick="verifierCode()">Entrer</button>
-    <p id="error">Code incorrect. Essayez encore.</p>
+    <button onclick="verifyCode()">Entrer</button>
+     <p id="error" style="color:red; display:none;">Code incorrect. Essayez encore.</p>
   </div>
 
   <div class="instructions" style="border: 2px solid #3366cc; padding: 20px; margin-top: 30px; display: inline-block; text-align: center;">
@@ -41,7 +41,7 @@ const mapping = {
   "5555": "groupe5.html",
 };
 
-function verifierCode() {
+function verifyCode() {
   const code = document.getElementById("codeInput").value.trim();
   const error = document.getElementById("error");
 
