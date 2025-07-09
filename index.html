@@ -16,6 +16,19 @@
     <button onclick="verifierCode()">Entrer</button>
     <p id="error">Code incorrect. Essayez encore.</p>
   </div>
+  <div class="instructions">
+      <h2>Chers collègues,</h2>
+      <p>Ceci est une version test du rallye.<br>
+         Veuillez choisir le thème que vous souhaitez tester et entrer le code correspondant :</p>
+      <ul style="list-style: none; padding-left: 0; text-align: right; display: inline-block;">
+        <li>🚲 <strong>Transport et mobilité</strong> — code : <code>1111</code></li>
+        <li>🏭 <strong>Usines et entreprises</strong> — code : <code>2222</code></li>
+        <li>🧭 <strong>Tourisme</strong> — code : <code>3333</code></li>
+        <li>🕍 <strong>Histoire et patrimoine religieux – Équipe 1</strong> — code : <code>4444</code></li>
+        <li>⛪ <strong>Histoire et patrimoine religieux – Équipe 2</strong> — code : <code>5555</code></li>
+      </ul>
+    </div>
+  
   <script>
     function verifierCode() {
       const code = document.getElementById("codeInput").value;
