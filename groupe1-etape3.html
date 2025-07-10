@@ -9,7 +9,7 @@
   <h1>Groupe 1 — Étape 3</h1>
 
   <div class="question-block">
-    <h3>Énigme :</h3>
+    <h3>Énigme - Le carrefour des mémoires :</h3>
     <p>
       Sur moi soufflent deux vents d’histoire.
       L’un, venu du Général, trace un nouveau chemin.
@@ -24,14 +24,16 @@
     <p id="erreur" style="color: red; display: none;">Code incorrect. Essayez encore.</p>
 
     <p id="indice1" style="display: none; color: blue; font-style: italic;">
-      💡 Indice 1 : Question — Quel est le nombre de véhicules par jour à Chemillé ?<br>
+       Question — Quel est le nombre de véhicules par jour à Chemillé ?<br>
       🗺️ Tracez sur la carte l'ancien axe Cholet – Angers.
+
+      💡 Indice 1 :  Je relie l’ancienne Route Nationale au boulevard d’un héros de guerre.
     </p>
     <p id="indice2" style="display: none; color: blue; font-style: italic;">
-      💡 Indice 2 : Regardez les panneaux de circulation aux abords du boulevard.
+      💡 Indice 2 : Je porte le nom de Paul Boissinot, ancien maire de Chemillé..
     </p>
     <p id="indice3" style="display: none; color: blue; font-style: italic;">
-      💡 Indice 3 : Le code est collé sous le panneau de limitation de vitesse.
+      💡 Indice 3 : RDP1
     </p>
   </div>
 
@@ -46,7 +48,7 @@
 
     let timer3 = setTimeout(() => {
       document.getElementById("indice3").style.display = "block";
-    }, 15 * 60 * 1000);
+    }, 25 * 60 * 1000);
 
     function verifierCodeQuestion() {
       const code = document.getElementById("codeQuestion").value.trim();
