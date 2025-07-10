@@ -7,17 +7,19 @@
 </head>
 <body>
   <h1>Groupe 1 — Étape 4</h1>
-  <h2>Lieu : Autoroute</h2>
-
-  <div class="question-block">
-    <h3>Question 4 :</h3>
-    <p>
-      <strong>Énigme :</strong> Je suis une voie rapide, mais parfois invisible. Mon nom commence souvent par "A". Où suis-je ?
+    <div class="question-block">
+       <strong>Énigme :</strong> Le Général t’a déjà montré le chemin. <br>
+Mais ne t’arrête pas au premier virage.<br>
+Continue là où les panneaux bleus pointent l’évasion,<br>
+Vers les grandes routes et les destinations.<br>
+Quand la vieille route te croise à nouveau,<br>
+Tu sauras que tu es arrivé au bon niveau.<br>
+Où cela t’emmène-t-il ? <br>
     </p>
     <p>
       <strong>Question :</strong> Quelles sont les infrastructures liées à l'autoroute ?<br>
       Utilisez Google Maps si besoin, et 📸 prenez une photo du panneau d’indication vers l’autoroute le plus proche.<br>
-      Une fois que vous avez trouvé la réponse, entrez le code collé sur place.
+     📝 Notez les réponses sur votre feuille. Une fois que vous avez trouvé la réponse, entrez le code collé sur place.<br>
     </p>
 
     <input type="text" id="codeQuestion" placeholder="Code de validation (ex : QST4)">
@@ -26,7 +28,8 @@
     <p id="erreur" style="color: red; display: none;">❌ Code incorrect. Essayez encore.</p>
     <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1 : Suis les panneaux vers l’autoroute A87, sans quitter Charles de Gaulle.</p>
     <p id="indice2" style="display: none; color: blue; font-style: italic;">💡 Indice 2 : Tu croiseras à nouveau la route nationale, juste avant de quitter Chemillé.</p>
-    <p id="indice3" style="display: none; color: green; font-style: italic;"> AUTO4 Bravo ! Code correct. Vous avez terminé le rallye !</p>
+    <p id="indice3" style="display: none; color: green; font-style: italic;"> AUTO4 </p>
+    <p id="finalMessage" style="display: none; color: darkgreen; font-weight: bold; font-size: 18px;">✅ Bravo ! Code correct. Vous avez terminé le rallye !</p>
   </div>
 
   <script>
@@ -47,6 +50,7 @@
       const code = document.getElementById("codeQuestion").value.trim();
       const erreur = document.getElementById("erreur");
       const success = document.getElementById("indice3");
+      const finalMsg = document.getElementById("finalMessage");
 
       if (code === "AUTO4") {
         clearTimeout(timer1);
@@ -55,11 +59,13 @@
         erreur.style.display = "none";
         success.textContent = "✅ Bravo ! Code correct. Vous avez terminé le rallye !";
         success.style.display = "block";
+        finalMsg.style.display = "block";
 
         // Optionnel : envoi dans Google Sheets
       } else {
         erreur.style.display = "block";
         success.style.display = "none";
+        finalMsg.style.display = "none";
       }
     }
   </script>
