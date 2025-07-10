@@ -6,40 +6,64 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Groupe 1 — Étape 2</h1>
-  <h2>Lieu : Gare ferroviaire</h2>
+   <h1>Groupe 1 - Etape 2. </h1>
+  <h2>Votre thème : Transport et mobilité</h2>
+  <p>
+Dans 5 minutes, vous recevrez un premier indice, puis un deuxième 5 minutes plus tard, et enfin un troisième indice.</p>
 
-  <div class="question-block">
+   <div class="question-block">
     <h3>Question 2 :</h3>
     <p>
-      📸 Prenez une photo de l’affichage des horaires.<br>
-      <strong>Question :</strong> Combien y a-t-il d'arrêts de train en gare de Chemillé chaque jour ? Quelle est l’amplitude horaire ?
-    </p>
-
+"Je ne suis ni une salle de classe, ni une gare routière.
+Mais pourtant, on m’attend parfois des heures, sans jamais s’ennuyer.
+Je vois passer des lignes, mais pas celles du cahier.
+Le matin je siffle, le soir je pars… Qui suis-je ?
+     
     <input type="text" id="codeQuestion" placeholder="Code de validation (ex : QST2)">
     <button onclick="verifierCodeQuestion()">Valider</button>
     <p id="erreur" style="color: red; display: none;">Code incorrect. Essayez encore.</p>
-    <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1 : blablabla</p>
-    <p id="indice2" style="display: none; color: blue; font-style: italic;">💡 Indice 2 : code fыe2</p>
+    <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1 : Certains me cherchent pour aller à Angers ou Cholet.</p>
+    <p id="indice2" style="display: none; color: blue; font-style: italic;">💡 Question :</strong> Combien y a-t-il d'arrêts de train en gare de Chemillé chaque jour ? Quelle est l’amplitude horaire ?
+       📸 Prenez une photo de l’affichage des horaires.<br> </p> Notez les réponses sur votre feuille. Trouvez ensuite le code, collé sur un support métallique non loin de l’endroit où vous
+     avez trouvé la réponse.
+   <p id="indice3" style="display: none; color: blue; font-style: italic;">💡 Indice 3 : GARE8</p>
+   </p>
   </div>
 
-  <script>
-    let timer1 = setTimeout(() => {
-      document.getElementById("indice1").style.display = "block";
-    }, 5 * 60 * 1000);
 
-    let timer2 = setTimeout(() => {
-      document.getElementById("indice2").style.display = "block";
-    }, 10 * 60 * 1000);
+  <script>
+    let indice1Timeout, indice2Timeout, indice3Timeout;
+
+    function lancerTimers() {
+      indice1Timeout = setTimeout(() => {
+        document.getElementById("indice1").style.display = "block";
+      }, 5 * 60 * 1000);
+
+      indice2Timeout = setTimeout(() => {
+        document.getElementById("indice2").style.display = "block";
+      }, 0.5 * 60 * 1000);
+
+      indice3Timeout = setTimeout(() => {
+        document.getElementById("indice3").style.display = "block";
+      }, 1 * 60 * 1000);
+    }
+
+    lancerTimers();
 
     function verifierCodeQuestion() {
       const code = document.getElementById("codeQuestion").value.trim();
       const erreur = document.getElementById("erreur");
 
-      if (code === "QST2") {
-        clearTimeout(timer1);
-        clearTimeout(timer2);
-        window.location.href = "groupe1-etape3.html";
+      const nextPages = {
+      "QST2": "groupe1-etape3.html",
+       
+      };
+
+      if (nextPages[code]) {
+        clearTimeout(indice1Timeout);
+        clearTimeout(indice2Timeout);
+        clearTimeout(indice3Timeout);
+        window.location.href = nextPages[code];
       } else {
         erreur.style.display = "block";
       }
