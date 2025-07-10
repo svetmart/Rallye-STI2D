@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Groupe 1 - Étape 3</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Groupe 1 — Étape 3</h1>
+
+  <div class="question-block">
+    <h3>Énigme :</h3>
+    <p>
+      Sur moi soufflent deux vents d’histoire.
+      L’un, venu du Général, trace un nouveau chemin.
+      L’autre, plus ancien, a porté les diligences vers Angers.
+      Je suis là où les roues tournent,
+      Mais les noms restent : un Paul, un Charles… et une Nationale.
+      Quel est ce lieu qui fait tourner le passé et le présent ?
+    </p>
+
+    <input type="text" id="codeQuestion" placeholder="Code de validation ">
+    <button onclick="verifierCodeQuestion()">Valider</button>
+    <p id="erreur" style="color: red; display: none;">Code incorrect. Essayez encore.</p>
+
+    <p id="indice1" style="display: none; color: blue; font-style: italic;">
+      💡 Indice 1 : Question — Quel est le nombre de véhicules par jour à Chemillé ?<br>
+      🗺️ Tracez sur la carte l'ancien axe Cholet – Angers.
+    </p>
+    <p id="indice2" style="display: none; color: blue; font-style: italic;">
+      💡 Indice 2 : Regardez les panneaux de circulation aux abords du boulevard.
+    </p>
+    <p id="indice3" style="display: none; color: blue; font-style: italic;">
+      💡 Indice 3 : Le code est collé sous le panneau de limitation de vitesse.
+    </p>
+  </div>
+
+  <script>
+    let timer1 = setTimeout(() => {
+      document.getElementById("indice1").style.display = "block";
+    }, 5 * 60 * 1000);
+
+    let timer2 = setTimeout(() => {
+      document.getElementById("indice2").style.display = "block";
+    }, 10 * 60 * 1000);
+
+    let timer3 = setTimeout(() => {
+      document.getElementById("indice3").style.display = "block";
+    }, 15 * 60 * 1000);
+
+    function verifierCodeQuestion() {
+      const code = document.getElementById("codeQuestion").value.trim();
+      const erreur = document.getElementById("erreur");
+
+      if (code === "RDP1") {
+        clearTimeout(timer1);
+        clearTimeout(timer2);
+        clearTimeout(timer3);
+        window.location.href = "groupe1-etape4.html";
+      } else {
+        erreur.style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
