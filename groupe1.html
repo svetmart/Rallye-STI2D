@@ -6,21 +6,31 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Bienvenue Groupe 1</h1>
-  <h2>Thème : Transport et mobilité</h2>
+   <h1>Bienvenue Groupe 1</h1>
+  <p>Page dédiée à votre groupe.</p>
+  <h2>Votre thème : Transport et mobilité</h2>
+
+  
+  <p>
+Vous devez visiter 4 lieux, un par un.
+À chaque étape, répondez à la question et trouvez le code sur place (il est collé sur le support où se trouve la réponse).
+Notez ce code dans le cadre ci-dessous pour accéder à l’étape suivante.
+Notez également chaque réponse sur votre fiche. À la fin du rallye, vous devrez les annoncer devant tous les élèves de STI2D.
+
+Dans 5 minutes, vous recevrez un premier indice, puis un deuxième indice 5 minutes plus tard.</p>
 
   <div class="question-block">
     <h3>Question 1 :</h3>
     <p>
-      Vous devez vous rendre à la <strong>Gare routière</strong>.<br>
+      Vous devez vous rendre à la <strong>Gare routière</strong>  la plus proche du lycée..<br>
       <strong>Question :</strong> Quelles sont les dessertes de Chemillé en bus ?<br>
-      Une fois que vous avez trouvé la réponse, entrez le code collé sur place.
+      Une fois que vous avez trouvé la réponse, entrez le code.
     </p>
     <input type="text" id="codeQuestion" placeholder="Code de validation (ex : QST1)">
     <button onclick="verifierCodeQuestion()">Valider</button>
     <p id="erreur" style="color: red; display: none;">Code incorrect. Essayez encore.</p>
-    <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1 : blablabla</p>
-    <p id="indice2" style="display: none; color: blue; font-style: italic;">💡 Indice 2 : code fыe1</p>
+    <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1 : Rue du Mail</p>
+    <p id="indice2" style="display: none; color: blue; font-style: italic;">💡 Indice 2 : code QST1</p>
   </div>
 
   <script>
@@ -29,11 +39,11 @@
     function lancerTimers() {
       indice1Timeout = setTimeout(() => {
         document.getElementById("indice1").style.display = "block";
-      }, 5 * 60 * 1000);
+      }, 0.5 * 60 * 1000);
 
       indice2Timeout = setTimeout(() => {
         document.getElementById("indice2").style.display = "block";
-      }, 10 * 60 * 1000);
+      }, 1 * 60 * 1000);
     }
 
     lancerTimers();
