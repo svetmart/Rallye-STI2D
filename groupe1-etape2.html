@@ -8,23 +8,23 @@
 <body>
    <h1>Groupe 1 - Etape 2. </h1>
   <h2>Votre thème : Transport et mobilité</h2>
-  <p>
-Dans 5 minutes, vous recevrez un premier indice, puis un deuxième 5 minutes plus tard, et enfin un troisième indice.</p>
-
+  
    <div class="question-block">
-    <h3>Question 2 :</h3>
+    <h3>Énigme :</h3>
     <p>
 "Je ne suis ni une salle de classe, ni une gare routière.
 Mais pourtant, on m’attend parfois des heures, sans jamais s’ennuyer.
 Je vois passer des lignes, mais pas celles du cahier.
-Le matin je siffle, le soir je pars… Qui suis-je ?
+Le matin je siffle, le soir je pars… Qui suis-je ?</p>
+
+      <p> Dans 5 minutes, vous recevrez un premier indice, puis un deuxième 5 minutes plus tard, et enfin un troisième indice.</p>
      
     <input type="text" id="codeQuestion" placeholder="Code de validation (ex : QST2)">
     <button onclick="verifierCodeQuestion()">Valider</button>
     <p id="erreur" style="color: red; display: none;">Code incorrect. Essayez encore.</p>
     <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1 : Certains me cherchent pour aller à Angers ou Cholet.</p>
     <p id="indice2" style="display: none; color: blue; font-style: italic;">💡 Question :</strong> Combien y a-t-il d'arrêts de train en gare de Chemillé chaque jour ? Quelle est l’amplitude horaire ?
-       📸 Prenez une photo de l’affichage des horaires.<br> </p> Notez les réponses sur votre feuille. Trouvez ensuite le code, collé sur un support métallique non loin de l’endroit où vous
+       📸 Prenez une photo de l’affichage des horaires.<br> </p> Notez les réponses sur votre feuille. Trouvez ensuite le code collé sur un support métallique non loin de l’endroit où vous
      avez trouvé la réponse.
    <p id="indice3" style="display: none; color: blue; font-style: italic;">💡 Indice 3 : GARE8</p>
    </p>
@@ -55,7 +55,7 @@ Le matin je siffle, le soir je pars… Qui suis-je ?
       const erreur = document.getElementById("erreur");
 
       const nextPages = {
-      "QST2": "groupe1-etape3.html",
+      "GARE8": "groupe1-etape3.html",
        
       };
 
