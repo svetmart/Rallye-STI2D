@@ -42,7 +42,7 @@ Où cela t’emmène-t-il ? <br>
     }, 10 * 60 * 1000);
 
     let timer3 = setTimeout(() => {
-      document.getElementById("indice3").textContent = "⏱ Attention : dernière chance, pensez à chercher du côté de l’entrée A87.";
+      document.getElementById("indice3").textContent = "⏱ Attention : dernière chance !";
       document.getElementById("indice3").style.display = "block";
     }, 15 * 60 * 1000);
 
@@ -57,7 +57,6 @@ Où cela t’emmène-t-il ? <br>
         clearTimeout(timer2);
         clearTimeout(timer3);
         erreur.style.display = "none";
-        success.textContent = "✅ Bravo ! Code correct. Vous avez terminé le rallye !";
         success.style.display = "block";
         finalMsg.style.display = "block";
 
