@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Groupe 1 - Étape 1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Bienvenue Groupe 1</h1>
+  <h2>Thème : Transport et mobilité</h2>
+
+  <div class="question-block">
+    <h3>Question 1 :</h3>
+    <p>
+      Vous devez vous rendre à la <strong>Gare routière</strong>.<br>
+      <strong>Question :</strong> Quelles sont les dessertes de Chemillé en bus ?<br>
+      Une fois que vous avez trouvé la réponse, entrez le code collé sur place.
+    </p>
+    <input type="text" id="codeQuestion" placeholder="Code de validation (ex : QST1)">
+    <button onclick="verifierCodeQuestion()">Valider</button>
+    <p id="erreur" style="color: red; display: none;">Code incorrect. Essayez encore.</p>
+  </div>
+
+  <script>
+    function verifierCodeQuestion() {
+      const code = document.getElementById("codeQuestion").value.trim();
+      const erreur = document.getElementById("erreur");
+
+      const nextPages = {
+        "QST1": "groupe1-etape2.html",
+        "QST2": "groupe1-etape3.html",
+        "QST3": "groupe1-etape4.html",
+        "QST4": "groupe1-fin.html"
+      };
+
+      if (nextPages[code]) {
+        window.location.href = nextPages[code];
+      } else {
+        erreur.style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
