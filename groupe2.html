@@ -32,15 +32,19 @@ Le matin je siffle, le soir je pars… Qui suis-je ?
 
 
   <script>
-    let indice1Timeout, indice2Timeout;
+    let indice1Timeout, indice2Timeout, indice3Timeout;
 
     function lancerTimers() {
       indice1Timeout = setTimeout(() => {
         document.getElementById("indice1").style.display = "block";
-      }, 0.5 * 60 * 1000);
+      }, 5 * 60 * 1000);
 
       indice2Timeout = setTimeout(() => {
         document.getElementById("indice2").style.display = "block";
+      }, 0.5 * 60 * 1000);
+
+      indice3Timeout = setTimeout(() => {
+        document.getElementById("indice3").style.display = "block";
       }, 1 * 60 * 1000);
     }
 
@@ -58,6 +62,7 @@ Le matin je siffle, le soir je pars… Qui suis-je ?
       if (nextPages[code]) {
         clearTimeout(indice1Timeout);
         clearTimeout(indice2Timeout);
+        clearTimeout(indice3Timeout);
         window.location.href = nextPages[code];
       } else {
         erreur.style.display = "block";
