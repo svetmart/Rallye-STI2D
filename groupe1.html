@@ -19,9 +19,25 @@
     <input type="text" id="codeQuestion" placeholder="Code de validation (ex : QST1)">
     <button onclick="verifierCodeQuestion()">Valider</button>
     <p id="erreur" style="color: red; display: none;">Code incorrect. Essayez encore.</p>
+    <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1 : blablabla</p>
+    <p id="indice2" style="display: none; color: blue; font-style: italic;">💡 Indice 2 : code fыe1</p>
   </div>
 
   <script>
+    let indice1Timeout, indice2Timeout;
+
+    function lancerTimers() {
+      indice1Timeout = setTimeout(() => {
+        document.getElementById("indice1").style.display = "block";
+      }, 5 * 60 * 1000);
+
+      indice2Timeout = setTimeout(() => {
+        document.getElementById("indice2").style.display = "block";
+      }, 10 * 60 * 1000);
+    }
+
+    lancerTimers();
+
     function verifierCodeQuestion() {
       const code = document.getElementById("codeQuestion").value.trim();
       const erreur = document.getElementById("erreur");
@@ -34,6 +50,8 @@
       };
 
       if (nextPages[code]) {
+        clearTimeout(indice1Timeout);
+        clearTimeout(indice2Timeout);
         window.location.href = nextPages[code];
       } else {
         erreur.style.display = "block";
