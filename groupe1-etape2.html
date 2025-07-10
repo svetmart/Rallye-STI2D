@@ -43,15 +43,15 @@ Quel est ce lieu où l’on attend… pour mieux partir ? </p>
     function lancerTimers() {
       indice1Timeout = setTimeout(() => {
         document.getElementById("indice1").style.display = "block";
-      }, 5 * 60 * 1000);
+      }, 0.5 * 60 * 1000);
 
       indice2Timeout = setTimeout(() => {
         document.getElementById("indice2").style.display = "block";
-      }, 0.5 * 60 * 1000);
+      }, 1 * 60 * 1000);
 
       indice3Timeout = setTimeout(() => {
         document.getElementById("indice3").style.display = "block";
-      }, 1 * 60 * 1000);
+      }, 1.5 * 60 * 1000);
     }
 
     lancerTimers();
