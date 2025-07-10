@@ -2,17 +2,24 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Groupe 1 - Étape 2</title>
+  <title>Groupe 1 - Étape 1</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <h1>Groupe 1 - Etape 2. </h1>
+   <h1>Bienvenue Groupe 1</h1>
+  <p>Page dédiée à votre groupe.</p>
   <h2>Votre thème : Transport et mobilité</h2>
-  
-   <div class="question-block">
-    <h3>Énigme :</h3>
-    <p>
-Je ne suis ni une classe, ni un arrêt de car,
+ 
+  <p>
+Vous devez visiter 4 lieux, un par un.
+À chaque étape, répondez à la question et trouvez le code sur place (il est collé sur le support où se trouve la réponse).
+Notez ce code dans le cadre ci-dessous pour accéder à l’étape suivante.
+Notez également chaque réponse sur votre fiche. À la fin du rallye, vous devrez les annoncer devant tous les élèves de STI2D.
+</p>
+
+  <div class="question-block">
+    <h3>Étape 2. Énigme : </h3>
+      <p>Je ne suis ni une classe, ni un arrêt de car,
 Mais ici, les départs marquent parfois un tournant.
 Depuis des décennies, je vois passer des visages,
 Certains partent le cœur léger, d’autres à contrecœur.
@@ -20,23 +27,25 @@ Je ne retiens personne, mais je m’en souviens longtemps.
 Mes lignes ne s’écrivent pas sur du papier,
 Elles vibrent, elles grincent, elles filent droit devant.
 Et quand je siffle, il est trop tard pour reculer.
-Quel est ce lieu où l’on attend… pour mieux partir ? </p>
-     <br>
-
-      <p> Dans 5 minutes, vous recevrez un premier indice, puis un deuxième 5 minutes plus tard, et enfin un troisième indice.</p>
-     
-    <input type="text" id="codeQuestion" placeholder="Code de validation (ex : QST2)">
+Quel est ce lieu où l’on attend… pour mieux partir ? </p><br>
+    
+    
+       
+    <input type="text" id="codeQuestion" placeholder="Code de validation (ex : QST1)">
     <button onclick="verifierCodeQuestion()">Valider</button>
-
     <p id="erreur" style="color: red; display: none;">Code incorrect. Essayez encore.</p>
-    <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1 : Certains me cherchent pour aller à Angers ou Cholet.</p>
-    <p id="indice2" style="display: none; color: blue; font-style: italic;">💡 Indice 2 : Question :</strong> Combien y a-t-il d'arrêts de train en gare de Chemillé chaque jour ? Quelle est l’amplitude horaire ?
-       📸 Prenez une photo de l’affichage des horaires.<br> </p> Notez les réponses sur votre feuille. Trouvez ensuite le code collé sur un support métallique non loin de l’endroit où vous
-     avez trouvé la réponse.
-   <p id="indice3" style="display: none; color: blue; font-style: italic;">💡 Indice 3 : GARE8</p>
-   </p>
-  </div>
+     <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1 : Certains me cherchent pour aller à Angers ou Cholet. 
+Place de la Gare, 49120 Chemillé-en-Anjou </p>  
+    <div id="indice2" style="display: none; color: blue; font-style: italic;">💡 Indice 1 : Certains me cherchent pour aller à Angers ou Cholet. 
+Place de la Gare, 49120 Chemillé-en-Anjou       <br>
+      <h3>Question 1 :</h3>
+     Combien y a-t-il d'arrêts de train en gare de Chemillé chaque jour ? Quelle est l’amplitude horaire ?   Prenez une photo de l’affichage des horaires. <br>
+      Notez les réponses sur votre feuille.  
+        <p> Une fois que vous avez trouvé la réponse, trouvez ensuite le code collé sur un support métallique non loin de l’endroit où vous avez trouvé la réponse.</p>
+    </div>  
 
+    <p id="indice3" style="display: none; color: blue; font-style: italic;">💡 Indice 3 : GARE8</p>
+  </div>
 
   <script>
     let indice1Timeout, indice2Timeout, indice3Timeout;
@@ -49,8 +58,7 @@ Quel est ce lieu où l’on attend… pour mieux partir ? </p>
       indice2Timeout = setTimeout(() => {
         document.getElementById("indice2").style.display = "block";
       }, 1 * 60 * 1000);
-
-      indice3Timeout = setTimeout(() => {
+      indice1Timeout = setTimeout(() => {
         document.getElementById("indice3").style.display = "block";
       }, 1.5 * 60 * 1000);
     }
@@ -62,7 +70,7 @@ Quel est ce lieu où l’on attend… pour mieux partir ? </p>
       const erreur = document.getElementById("erreur");
 
       const nextPages = {
-      "GARE8": "groupe1-etape3.html",
+        "GARE8": "groupe1-etape3.html",
        
       };
 
