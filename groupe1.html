@@ -19,22 +19,26 @@ Notez également chaque réponse sur votre fiche. À la fin du rallye, vous devr
 </p>
 
   <div class="question-block">
-    <h3>Question 1 :</h3>
-    <p>
-      Vous devez vous rendre à la <strong>Gare routière</strong>  la plus proche du lycée..<br>
-      <strong>Question :</strong> Quelles sont les dessertes de Chemillé en bus ?<br>
-      Une fois que vous avez trouvé la réponse, trouvez ensuite le code, collé sur un support métallique non loin de l’endroit où vous avez trouvé la réponse.</p>
-
-      <p>Dans 5 minutes, vous recevrez un premier indice, puis un deuxième indice 5 minutes plus tard.     </p>
+    <h3>Énigme : </h3>
+      <p>Je ne suis pas une gare de trains,
+        Mais moi aussi, je fais partir les voyageurs au matin.
+       Je suis cachée dans une rue qui rime avec journal,
+       Et des lignes m’arrêtent… mais ce ne sont pas des lignes de cahier.</p><br>
+    <p>Allez sur le lieu  et attendez que la première question vous soit transmise avec un indice.</p>
+       
     <input type="text" id="codeQuestion" placeholder="Code de validation (ex : QST1)">
     <button onclick="verifierCodeQuestion()">Valider</button>
     <p id="erreur" style="color: red; display: none;">Code incorrect. Essayez encore.</p>
-    <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1 : Rue du Mail</p>
-    <p id="indice2" style="display: none; color: blue; font-style: italic;">💡 Indice 2 : code QST1</p>
+    <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1 : <h3>Question 1 :</h3>
+    <p> Vous devez vous rendre à la <strong>Gare routière</strong>  la plus proche du lycée..<br>
+      <strong>Question :</strong> Quelles sont les dessertes de Chemillé en bus ?<br>
+      Une fois que vous avez trouvé la réponse, trouvez ensuite le code, collé sur un support métallique non loin de l’endroit où vous avez trouvé la réponse.</p></p>
+    <p id="indice2" style="display: none; color: blue; font-style: italic;">💡 Indice 2 : Rue du Mail</p>
+    <p id="indice3" style="display: none; color: blue; font-style: italic;">💡 Indice 3 : QST1</p>
   </div>
 
   <script>
-    let indice1Timeout, indice2Timeout;
+    let indice1Timeout, indice2Timeout, indice3Timeout;
 
     function lancerTimers() {
       indice1Timeout = setTimeout(() => {
@@ -44,6 +48,9 @@ Notez également chaque réponse sur votre fiche. À la fin du rallye, vous devr
       indice2Timeout = setTimeout(() => {
         document.getElementById("indice2").style.display = "block";
       }, 1 * 60 * 1000);
+      indice1Timeout = setTimeout(() => {
+        document.getElementById("indice3").style.display = "block";
+      }, 1.5 * 60 * 1000);
     }
 
     lancerTimers();
@@ -60,6 +67,7 @@ Notez également chaque réponse sur votre fiche. À la fin du rallye, vous devr
       if (nextPages[code]) {
         clearTimeout(indice1Timeout);
         clearTimeout(indice2Timeout);
+        clearTimeout(indice3Timeout);
         window.location.href = nextPages[code];
       } else {
         erreur.style.display = "block";
