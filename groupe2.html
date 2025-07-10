@@ -2,33 +2,34 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Groupe 1 - Étape 1</title>
+  <title>Groupe 1 - Étape 2</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <h1>Groupe 1</h1>
+   <h1>Groupe 1 - Etape 2. </h1>
   <h2>Votre thème : Transport et mobilité</h2>
   <p>
-Vous devez visiter 4 lieux, un par un.
-À chaque étape, répondez à la question et trouvez le code sur place (il est collé sur le support où se trouve la réponse).
-Notez ce code dans le cadre ci-dessous pour accéder à l’étape suivante.
-Notez également chaque réponse sur votre fiche. À la fin du rallye, vous devrez les annoncer devant tous les élèves de STI2D.
+Dans 5 minutes, vous recevrez un premier indice, puis un deuxième 5 minutes plus tard, et enfin un troisième indice.</p>
 
-Dans 5 minutes, vous recevrez un premier indice, puis un deuxième indice 5 minutes plus tard.</p>
-
-  <div class="question-block">
-    <h3>Question 1 :</h3>
+   <div class="question-block">
+    <h3>Question 2 :</h3>
     <p>
-      Vous devez vous rendre à la <strong>Gare routière</strong>  la plus proche du lycée..<br>
-      <strong>Question :</strong> Quelles sont les dessertes de Chemillé en bus ?<br>
-      Une fois que vous avez trouvé la réponse, entrez le code.
-    </p>
-    <input type="text" id="codeQuestion" placeholder="Code de validation (ex : QST1)">
+"Je ne suis ni une salle de classe, ni une gare routière.
+Mais pourtant, on m’attend parfois des heures, sans jamais s’ennuyer.
+Je vois passer des lignes, mais pas celles du cahier.
+Le matin je siffle, le soir je pars… Qui suis-je ?
+     
+    <input type="text" id="codeQuestion" placeholder="Code de validation (ex : QST2)">
     <button onclick="verifierCodeQuestion()">Valider</button>
     <p id="erreur" style="color: red; display: none;">Code incorrect. Essayez encore.</p>
-    <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1 : Rue du Mail</p>
-    <p id="indice2" style="display: none; color: blue; font-style: italic;">💡 Indice 2 : code QST1</p>
+    <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1 : Certains me cherchent pour aller à Angers ou Cholet.</p>
+    <p id="indice2" style="display: none; color: blue; font-style: italic;">💡 Question :</strong> Combien y a-t-il d'arrêts de train en gare de Chemillé chaque jour ? Quelle est l’amplitude horaire ?
+       📸 Prenez une photo de l’affichage des horaires.<br> </p> Notez les réponses sur votre feuille. Trouvez ensuite le code, collé sur un support métallique non loin de l’endroit où vous
+     avez trouvé la réponse.
+   <p id="indice3" style="display: none; color: blue; font-style: italic;">💡 Indice 3 : GARE8</p>
+   </p>
   </div>
+
 
   <script>
     let indice1Timeout, indice2Timeout;
