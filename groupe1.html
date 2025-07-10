@@ -24,7 +24,7 @@ Dans 5 minutes, vous recevrez un premier indice, puis un deuxième indice 5 minu
     <p>
       Vous devez vous rendre à la <strong>Gare routière</strong>  la plus proche du lycée..<br>
       <strong>Question :</strong> Quelles sont les dessertes de Chemillé en bus ?<br>
-      Une fois que vous avez trouvé la réponse, entrez le code.
+      Une fois que vous avez trouvé la réponse, trouvez ensuite le code, collé sur un support métallique non loin de l’endroit où vous avez trouvé la réponse.
     </p>
     <input type="text" id="codeQuestion" placeholder="Code de validation (ex : QST1)">
     <button onclick="verifierCodeQuestion()">Valider</button>
@@ -54,9 +54,7 @@ Dans 5 minutes, vous recevrez un premier indice, puis un deuxième indice 5 minu
 
       const nextPages = {
         "QST1": "groupe1-etape2.html",
-        "QST2": "groupe1-etape3.html",
-        "QST3": "groupe1-etape4.html",
-        "QST4": "groupe1-fin.html"
+       
       };
 
       if (nextPages[code]) {
