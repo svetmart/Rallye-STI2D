@@ -9,5 +9,71 @@
 <body>
   <h1>Bienvenue Groupe 3 !</h1>
   <p>Page dédiée à votre groupe.</p>
+  <h1> Groupe 3 - Etape 1</h1>
+  
+  <div class="question-block">
+    <h3> Énigme : </h3>
+      <p>..... </p><br>
+
+    <img src="images/la_gare.jpg" alt="La gare" width="300" height="200" >
+    
+    
+       
+    <input type="text" id="codeQuestion" placeholder="Code de validation (ex : QST1)">
+    <button onclick="verifierCodeQuestion()">Valider</button>
+    <p id="erreur" style="color: red; display: none;">Code incorrect. Essayez encore.</p>
+     <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1 : ...... <br>
+....... </p>  
+    <div id="indice2" style="display: none; color: blue; font-style: italic;">💡 Indice 2 : .....
+    <span style="color: black;">  <h3>Question 1 :</h3>
+     Combien y a-t-il d'arrêts de train en gare de Chemillé chaque jour ? <br>
+      Quelle est l’amplitude horaire ? <br>
+      Prenez une photo de l’affichage des horaires. <br>
+      Notez les réponses sur votre feuille.  </span><br>
+        <p> Une fois que vous avez trouvé la réponse, trouvez ensuite le code collé sur un support métallique non loin de l’endroit où vous avez trouvé la réponse.</p>
+    </div>  
+
+    <p id="indice3" style="display: none; color: blue; font-style: italic;">💡 Indice 3 : GARE8</p>
+  </div>
+
+  <script>
+    let indice1Timeout, indice2Timeout, indice3Timeout;
+
+    function lancerTimers() {
+      indice1Timeout = setTimeout(() => {
+        document.getElementById("indice1").style.display = "block";
+      }, 0.5 * 60 * 1000);
+
+      indice2Timeout = setTimeout(() => {
+        document.getElementById("indice2").style.display = "block";
+      }, 1 * 60 * 1000);
+      indice1Timeout = setTimeout(() => {
+        document.getElementById("indice3").style.display = "block";
+      }, 1.5 * 60 * 1000);
+    }
+
+    lancerTimers();
+
+    function verifierCodeQuestion() {
+      const code = document.getElementById("codeQuestion").value.trim();
+      const erreur = document.getElementById("erreur");
+
+      const nextPages = {
+        "GARE8": "groupe1-etape3.html",
+       
+      };
+
+      if (nextPages[code]) {
+        clearTimeout(indice1Timeout);
+        clearTimeout(indice2Timeout);
+        clearTimeout(indice3Timeout);
+        window.location.href = nextPages[code];
+      } else {
+        erreur.style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
 </body>
 </html>
