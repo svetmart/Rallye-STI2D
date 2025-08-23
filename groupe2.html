@@ -49,9 +49,10 @@ Le Cercle pointu est un espace économique où les professionnels mettent en pre
           Notez les réponses sur votre feuille.  <br>
          Une fois que vous avez trouvé la réponse, trouvez ensuite le code collé sur un support métallique non loin de l’endroit où vous avez trouvé la réponse.</p>
         
-    <p id="indice2" style="display: none; color: blue; font-style: italic;">💡 Indice 2:</strong> 28 bis, rue de la Broderie
+    <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1:</strong> Allez au Champ de Foire et trouvez le Cercle pointu.</p>
+         
+    <p id="indice2" style="display: none; color: blue; font-style: italic;"> 💡 Indice 2:</strong> 28 bis, rue de la Broderie
 49290 Chemillé-en-Anjou </p>
-     
    <p id="indice3" style="display: none; color: blue; font-style: italic;">💡 Indice 3 : BRD2</p>
    
 </div>
@@ -62,7 +63,7 @@ Le Cercle pointu est un espace économique où les professionnels mettent en pre
     function lancerTimers() {
       indice1Timeout = setTimeout(() => {
         document.getElementById("indice1").style.display = "block";
-      }, 5 * 60 * 1000);
+      }, 0.5 * 60 * 1000);
 
       indice2Timeout = setTimeout(() => {
         document.getElementById("indice2").style.display = "block";
