@@ -10,35 +10,30 @@
   
   <div class="question-block">
     <h3> Énigme : </h3>
-      <p>Je ne suis ni une classe, ni un arrêt de car,<br>
-Mais ici, les départs marquent parfois un tournant.<br>
-Depuis des décennies, je vois passer des visages,<br>
-Certains partent le cœur léger, d’autres à contrecœur.<br>
-Je ne retiens personne, mais je m’en souviens longtemps.<br>
-Mes lignes ne s’écrivent pas sur du papier,<br>
-Elles vibrent, elles grincent, elles filent droit devant.<br>
-Et quand je siffle, il est trop tard pour reculer.<br>
-Quel est ce lieu où l’on attend… pour mieux partir ? </p><br>
-  <p>
-    <img src="images/la_gare.jpg" alt="La gare" width="300" height="200" align=”middle">
+      <p>Près du Super U, un nouvel automate vous attend.
+Il avale les bouteilles en plastique et en échange, il vous remet un bon d’achat.
+Trier et rapporter vos bouteilles, c’est un geste écologique qui protège la planète… et qui peut rapporter !
+Dans la journée, l’automate qui collecte les bouteilles enregistre chaque dépôt dans un fichier stocké sur le serveur.
+    • L’enregistrement d’une bouteille occupe 5 ko.
+    • 20 personnes ont utilisé l’automate, 10 bouteilles chacune.
+   
+Questions :
+    1. Quelle est la place totale occupée sur le serveur à la fin de la journée ?
+    2. Quelle est la somme totale du bon d’achat émis par l’automate ?
+Code à rendre : réponse coût total (sans espaces, sans lettres, uniquement les chiffres ).
+    
   </p>  
     
        
     <input type="text" id="codeQuestion" placeholder="Code de validation (ex : QST1)">
     <button onclick="verifierCodeQuestion()">Valider</button>
     <p id="erreur" style="color: red; display: none;">Code incorrect. Essayez encore.</p>
-     <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1 : Certains me cherchent pour aller à Angers ou Cholet. <br>
-Place de la Gare, 49120 Chemillé-en-Anjou </p>  
-    <div id="indice2" style="display: none; color: blue; font-style: italic;">💡 Indice 2 : Je suis la gare SNCF de Chemillé, place de la Gare.
-    <span style="color: black;">  <h3>Question 1 :</h3>
-     Combien y a-t-il d'arrêts de train en gare de Chemillé chaque jour ? <br>
-      Quelle est l’amplitude horaire ? <br>
-      Prenez une photo de l’affichage des horaires. <br>
-      Notez les réponses sur votre feuille.  </span><br>
-        <p> Une fois que vous avez trouvé la réponse, trouvez ensuite le code collé sur un support métallique non loin de l’endroit où vous avez trouvé la réponse.</p>
-    </div>  
-
-    <p id="indice3" style="display: none; color: blue; font-style: italic;">💡 Indice 3 : GARE8</p>
+     <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1 : Va au Super U. (piste : près du parking, cherche l’automate des bouteilles)  </p>  
+    <p id="indice2" style="display: none; color: blue; font-style: italic;">💡 Indice 2 : Près du casier  Mondial Relay Locker, Rue du Bompas, 49120 Chemillé-en-Anjou  </p>  
+    <p id="indice3" style="display: none; color: blue; font-style: italic;">💡 Indice 3 :Bouteilles : 20 × 10 = 200 bouteilles
+    • Espace : 200 × 5 ko = 1000 ko ≈ 1 Mo
+    • Bon d’achat : 200 × 0,01 € = 2,00 €
+    • Code : 10002</p>
   </div>
 
   <script>
@@ -64,7 +59,7 @@ Place de la Gare, 49120 Chemillé-en-Anjou </p>
       const erreur = document.getElementById("erreur");
 
       const nextPages = {
-        "GARE8": "groupe1-etape3.html",
+        "10002": "groupe2-etape3.html",
        
       };
 
