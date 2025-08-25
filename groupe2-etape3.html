@@ -50,20 +50,25 @@ Notez vos réponses sur la feuille et présentez-les lors du briefing après le 
     function verifierCodeQuestion() {
       const code = document.getElementById("codeQuestion").value.trim();
       const erreur = document.getElementById("erreur");
+       const success = document.getElementById("indice3");
+      const finalMsg = document.getElementById("finalMessage");
+    };      
 
-      const nextPages = {
-        "DEC9": "groupe2-etape3.html",
-       
-      };
+      if (code === DEC9") {
+        clearTimeout(timer1);
+        clearTimeout(timer2);
+        clearTimeout(timer3);
+        erreur.style.display = "none";
+        success.style.display = "block";
+        finalMsg.style.display = "block";
 
-      if (nextPages[code]) {
-        clearTimeout(indice1Timeout);
-        clearTimeout(indice2Timeout);
-        clearTimeout(indice3Timeout);
-        window.location.href = nextPages[code];
+        // Optionnel : envoi dans Google Sheets
       } else {
         erreur.style.display = "block";
+        success.style.display = "none";
+        finalMsg.style.display = "none";
       }
+     
     }
   </script>
 </body>
