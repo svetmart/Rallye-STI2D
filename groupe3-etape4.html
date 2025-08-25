@@ -2,69 +2,63 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Groupe 3 - Étape 4</title>
+  <title>Groupe 2 - Étape 3</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Groupe 3 — Étape 4</h1>
+  <h1>Groupe 2 — Étape 3</h1>
     <div class="question-block">
-      <p> <strong>Énigme</strong> </p> <br>
-<p>01001111 01000110 01000110 01001001 01000011 01000101 00100000 01000100 01000101 00100000 01010100
-        01001111 01010101 01010010 01001001 01010011 01001101 01000101 </p>
-        Chaque groupe de 8 chiffres est une lettre en code ASCII binaire. Décodez pour trouver le lieu. 
-     </p>
-       <p> <img src="images/ascii-code-table.jpg" alt="ascii" width="500" height="400" class="center">  <br>
-    </p>
-      <input type="text" id="codeQuestion" placeholder="Code de validation (ex : QST4)">
+       <strong>Énigme :</strong> 01001111 01000110 01000110 01001001 01000011 01000101 00100000 01000100 01000101 00100000
+      01010100 01001111 01010101 01010010 01001001 01010011 01001101 01000101 <br>
+Chaque groupe de 8 chiffres est une lettre en code ASCII binaire. Décodez pour trouver le lieu. . <br>
+ <p><img src="images/ascii-code-table.jpg" alt="ascii" width="500" height="400" class="center"></p>
+
+    <input type="text" id="codeQuestion" placeholder="Code de validation (ex : QST4)">
     <button onclick="verifierCodeQuestion()">Valider</button>
 
     <p id="erreur" style="color: red; display: none;">❌ Code incorrect. Essayez encore.</p>
-   
-    <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1 : Office de tourisme </p>
-    <p id="indice2" style="display: none; color: blue; font-style: italic;">💡 Indice 2 : 1 Rue de l'Arzillé  49120 CHEMILLE-EN-ANJOU .
-      Consultez les horaires d’ouverture de l’office de tourisme. Code à saisir , en majuscules et sans accent : 
-      la réponse à la question “L’office de tourisme est‑il ouvert maintenant ?” . </p>
-    <p id="indice3" style="display: none; color: green; font-style: italic;"> NON </p>
+    <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1 :  Office de tourisme </p>
+    <p id="indice2" style="display: none; color: blue; font-style: italic;">💡 Indice 2 : Adresse :  1 Rue de l'Arzillé  49120 CHEMILLE-EN-ANJOU . Consultez les horaires d’ouverture de l’office de tourisme. <br>
+       Code à saisir , en majuscules et sans accent : la réponse à la question “L’office de tourisme est‑il ouvert maintenant ?”   </p>
+    <p id="indice3" style="display: none; color: green; font-style: italic;"> 💡 Indice 3 : NON </p>
     <p id="finalMessage" style="display: none; color: darkgreen; font-weight: bold; font-size: 18px;">✅ Bravo ! Code correct. Vous avez terminé le rallye !</p>
   </div>
 
   <script>
-    let timer1 = setTimeout(() => {
-      document.getElementById("indice1").style.display = "block";
-    }, 0.5 * 60 * 1000);
+  // 30 секунд
+  let timer1 = setTimeout(() => {
+    document.getElementById("indice1").style.display = "block";
+  }, 0.5 * 60 * 1000);
 
-    let timer2 = setTimeout(() => {
-      document.getElementById("indice2").style.display = "block";
-    }, 1 * 60 * 1000);
+  // 60 секунд
+  let timer2 = setTimeout(() => {
+    document.getElementById("indice2").style.display = "block";
+  }, 1 * 60 * 1000);
 
-    let timer3 = setTimeout(() => {
-       let timer3 = setTimeout(() => {
-     document.getElementById("indice3").style.display = "block";
-    }, 1.5 * 60 * 1000);
-// Нормализация ввода: убрать акценты/пробелы, верхний регистр
-    function normalize(str) {
-      return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase().replace(/\s+/g, '');
-      
-    function verifierCodeQuestion() {
-      const code = document.getElementById("codeQuestion").value.trim();
-      const erreur = document.getElementById("erreur");
-      const success = document.getElementById("indice3");
-      const finalMsg = document.getElementById("finalMessage");
+  // 90 секунд — просто показать, не менять текст!
+  let timer3 = setTimeout(() => {
+    document.getElementById("indice3").style.display = "block";
+  }, 1.5 * 60 * 1000);
 
-      if (code === "NON") {
-        clearTimeout(timer1);
-        clearTimeout(timer2);
-        clearTimeout(timer3);
-        erreur.style.display = "none";
-        success.style.display = "block";
-        finalMsg.style.display = "block";
+  function verifierCodeQuestion() {
+    const code = document.getElementById("codeQuestion").value.trim();
+    const erreur = document.getElementById("erreur");
+    const success = document.getElementById("indice3");
+    const finalMsg = document.getElementById("finalMessage");
 
-        // Optionnel : envoi dans Google Sheets
-      } else {
-        erreur.style.display = "block";
-        success.style.display = "none";
-        finalMsg.style.display = "none";
-      }
+    if (code === "NON") {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+      clearTimeout(timer3);
+      erreur.style.display = "none";
+      success.style.display = "block";   // показываем «Indice 3 : DEC9»
+      finalMsg.style.display = "block";
+    } else {
+      erreur.style.display = "block";
+      success.style.display = "none";
+      finalMsg.style.display = "none";
+    }
+  
     }
   </script>
 </body>
