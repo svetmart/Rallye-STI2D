@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Groupe 3 - Étape 2</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <h1> Groupe 3 - Etape 2</h1>
+  
+  <div class="question-block">
+    <h3> Énigme : </h3>
+    <p>  Je suis un ouvrage d’art hydraulique construit en travers d’un cours d’eau, destiné à en réguler le débit et/ou à stocker l’eau,
+      notamment pour le contrôle des crues, l’irrigation, l’industrie, l’hydroélectricité, la pisciculture et l’alimentation en eau potable.</p>
+    <p> Coulant doucement, le ruisseau accompagne tes pas,<br>
+Ombres d’arbres t’abritent quand le soleil brûlera,<br>
+Un chemin de fraîcheur, entre pierres et feuillages, <br>
+Là où nature et ville se croisent au passage, <br>
+Écoute le vent qui joue dans les branches légères, <br>
+Et marche encore : le calme t’éclaire. <br>
+
+Vers les ponts et les berges, la vie se dessine, <br>
+En ce ruban vert qui serpente et chemine, <br>
+Reve de promeneur, de cycliste ou de coureur, <br>
+Tous y trouvent repos, espace et douceur, <br>
+Et toi, sauras-tu nommer ce lieu secret ?<br></p>
+
+Question : Quel est le nom de ce lieu ? Rendez-vous à l’endroit marqué par la croix rouge sur la photo
+   <img src="images/barrage-el1.jpg" alt="barrage-el" width="300" height="200" align=”middle">  
+    
+    <input type="text" id="codeQuestion" placeholder="Code de validation (ex : QST1)">
+    <button onclick="verifierCodeQuestion()">Valider</button>
+    <p id="erreur" style="color: red; display: none;">Code incorrect. Essayez encore.</p>
+     <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1 : Barrage – Coulée verte. 
+      Allez jusqu’à l’extrémité du barrage et notez la phrase qui est masquée sur la photo : c’est votre code, en minuscules et sans espace. <br></p>  
+    <img src="images/barrage-el.jpg" alt="barrage" width="300" height="200" align=”middle">
+    <div id="indice2" style="display: none; color: blue; font-style: italic;">💡 Indice 2 :Entrée avant de la Coulvée.
+      L’endroit entouré en rouge sur la carte Google Maps 
+    <img src="images/barrage-el1.jpg" alt="barrage" width="300" height="200" align=”middle">
+       </div>  
+
+    <p id="indice3" style="display: none; color: blue; font-style: italic;">💡 Indice 3 : dangeraccésinterdit</p>
+  </div>
+
+  <script>
+    let indice1Timeout, indice2Timeout, indice3Timeout;
+
+    function lancerTimers() {
+      indice1Timeout = setTimeout(() => {
+        document.getElementById("indice1").style.display = "block";
+      }, 0.5 * 60 * 1000);
+
+      indice2Timeout = setTimeout(() => {
+        document.getElementById("indice2").style.display = "block";
+      }, 1 * 60 * 1000);
+      indice1Timeout = setTimeout(() => {
+        document.getElementById("indice3").style.display = "block";
+      }, 1.5 * 60 * 1000);
+    }
+
+    lancerTimers();
+
+    function verifierCodeQuestion() {
+      const code = document.getElementById("codeQuestion").value.trim();
+      const erreur = document.getElementById("erreur");
+
+      const nextPages = {
+        "dangeraccésinterdit": "groupe3-etape3.html",
+       
+      };
+
+      if (nextPages[code]) {
+        clearTimeout(indice1Timeout);
+        clearTimeout(indice2Timeout);
+        clearTimeout(indice3Timeout);
+        window.location.href = nextPages[code];
+      } else {
+        erreur.style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
