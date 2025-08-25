@@ -16,8 +16,6 @@ Qui suis-je ? <br>
 Question : Quelle est l’activité de cette entreprise ? Pour quels secteurs travaille-t-elle ?
 Notez vos réponses sur la feuille et présentez-les lors du briefing après le rallye. 
  
-  </p>
-   
 
     <input type="text" id="codeQuestion" placeholder="Code de validation (ex : QST4)">
     <button onclick="verifierCodeQuestion()">Valider</button>
@@ -30,39 +28,40 @@ Notez vos réponses sur la feuille et présentez-les lors du briefing après le 
   </div>
 
   <script>
-    let timer1 = setTimeout(() => {
-      document.getElementById("indice1").style.display = "block";
-    }, 0.5 * 60 * 1000);
+  // 30 секунд
+  let timer1 = setTimeout(() => {
+    document.getElementById("indice1").style.display = "block";
+  }, 0.5 * 60 * 1000);
 
-    let timer2 = setTimeout(() => {
-      document.getElementById("indice2").style.display = "block";
-    }, 1 * 60 * 1000);
+  // 60 секунд
+  let timer2 = setTimeout(() => {
+    document.getElementById("indice2").style.display = "block";
+  }, 1 * 60 * 1000);
 
-    let timer3 = setTimeout(() => {
-      document.getElementById("indice3").textContent = "⏱ Attention : dernière chance !";
-      document.getElementById("indice3").style.display = "block";
-    }, 1.5 * 60 * 1000);
+  // 90 секунд — просто показать, не менять текст!
+  let timer3 = setTimeout(() => {
+    document.getElementById("indice3").style.display = "block";
+  }, 1.5 * 60 * 1000);
 
-    function verifierCodeQuestion() {
-      const code = document.getElementById("codeQuestion").value.trim();
-      const erreur = document.getElementById("erreur");
-      const success = document.getElementById("indice3");
-      const finalMsg = document.getElementById("finalMessage");
+  function verifierCodeQuestion() {
+    const code = document.getElementById("codeQuestion").value.trim();
+    const erreur = document.getElementById("erreur");
+    const success = document.getElementById("indice3");
+    const finalMsg = document.getElementById("finalMessage");
 
-      if (code === "DEC9") {
-        clearTimeout(timer1);
-        clearTimeout(timer2);
-        clearTimeout(timer3);
-        erreur.style.display = "none";
-        success.style.display = "block";
-        finalMsg.style.display = "block";
-
-        // Optionnel : envoi dans Google Sheets
-      } else {
-        erreur.style.display = "block";
-        success.style.display = "none";
-        finalMsg.style.display = "none";
-      }
+    if (code === "DEC9") {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+      clearTimeout(timer3);
+      erreur.style.display = "none";
+      success.style.display = "block";   // показываем «Indice 3 : DEC9»
+      finalMsg.style.display = "block";
+    } else {
+      erreur.style.display = "block";
+      success.style.display = "none";
+      finalMsg.style.display = "none";
+    }
+  
     }
   </script>
 </body>
