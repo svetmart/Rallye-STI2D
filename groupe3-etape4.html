@@ -13,7 +13,7 @@
         01001111 01010101 01010010 01001001 01010011 01001101 01000101 </p>
         Chaque groupe de 8 chiffres est une lettre en code ASCII binaire. Décodez pour trouver le lieu. 
      </p>
-       <p> <img src="images/ascii-code-table.jpg" alt="ascii" width="500" height="400" align="middle">  <br>
+       <p> <img src="images/ascii-code-table.jpg" alt="ascii" width="500" height="400" class="center">  <br>
     </p>
       <input type="text" id="codeQuestion" placeholder="Code de validation (ex : QST4)">
     <button onclick="verifierCodeQuestion()">Valider</button>
@@ -41,7 +41,10 @@
        let timer3 = setTimeout(() => {
      document.getElementById("indice3").style.display = "block";
     }, 1.5 * 60 * 1000);
-
+// Нормализация ввода: убрать акценты/пробелы, верхний регистр
+    function normalize(str) {
+      return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase().replace(/\s+/g, '');
+      
     function verifierCodeQuestion() {
       const code = document.getElementById("codeQuestion").value.trim();
       const erreur = document.getElementById("erreur");
