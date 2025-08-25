@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Groupe 3 - Étape 3</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Groupe 3 — Étape 3</h1>
+
+  <div class="question-block">
+    <h3>Énigme </h3>
+    <p> Au milieu du XIXe siècle, la France est touchée par la crise du phylloxera qui ravage les vignes de la région.
+      Afin d'aider les viticulteurs locaux à subvenir à leurs besoins, un agriculteur développe la production de camomille romaine,
+      importée de Belgique. La culture de cette plante médicinale va s'étendre autour de Chemillé.
+      En 1976, un groupe de producteurs crée le jardin des plantes médicinales et aromatiques de Chemillé, 
+      afin de développer la connaissance des plantes qu'on appelle aussi « plantes santé-beauté-bien-être ». 
+     <br>
+      Question : Quel est ce lieu ? 
+    </p>
+
+    <input type="text" id="codeQuestion" placeholder="Code de validation ">
+    <button onclick="verifierCodeQuestion()">Valider</button>
+    <p id="erreur" style="color: red; display: none;">Code incorrect. Essayez encore.</p>
+
+    <p id="indice1" style="display: none; color: blue; font-style: italic;">
+           💡 Indice 1 :  Ce jardin botanique de 3,5 hectares situé au cœur de la vallée de l'Hyrôme, ouvre ses portes chaque année le 1er mai, avec son marché aux plantes. Il est organisé en six jardins thématiques autour de la camomille : le jardin des senteurs, le jardin des cultures locales, le jardin des plantes médicinale (avec plus de 300 espèces répertoriées), le jardin des saveurs, le jardin des fibres et couleurs (regroupant des espèces servant principalement à faire des cordages ou à colorer) et le jardin botanique. 
+ En 2010, il reçoit le label « Jardin botanique de France et des Pays francophones », en 2012 la marque Qualité Tourisme et en 2018 Jardin remarquable par le ministère de la Culture.
+En 2013, le parc comptabilise 1 700 visiteurs et 27 000 visiteurs en 2018 dont 7 000 scolaires. <br>
+    </p>
+    <p id="indice2" style="display: none; color: blue; font-style: italic;">
+      💡 Indice 2 : Le jardin Camifolia. 11 Rue de l'Arzillé, 49120 Chemillé-en-Anjou.  Le code se trouve sur le parking, sur un poteau métallique.
+    </p>
+    <p id="indice3" style="display: none; color: blue; font-style: italic;">
+      💡 Indice 3 : CAM3. 
+    </p>
+  </div>
+
+  <script>
+    let timer1 = setTimeout(() => {
+      document.getElementById("indice1").style.display = "block";
+    }, 0.5 * 60 * 1000);
+
+    let timer2 = setTimeout(() => {
+      document.getElementById("indice2").style.display = "block";
+    }, 1 * 60 * 1000);
+
+    let timer3 = setTimeout(() => {
+      document.getElementById("indice3").style.display = "block";
+    }, 1.5 * 60 * 1000);
+
+    function verifierCodeQuestion() {
+      const code = document.getElementById("codeQuestion").value.trim();
+      const erreur = document.getElementById("erreur");
+
+      if (code === "CAM3") {
+        clearTimeout(timer1);
+        clearTimeout(timer2);
+        clearTimeout(timer3);
+        window.location.href = "groupe3-etape4.html";
+      } else {
+        erreur.style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
