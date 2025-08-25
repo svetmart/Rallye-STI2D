@@ -1,19 +1,25 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Groupe 3</title>
+  <title>Groupe 2 - Étape 1</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Bienvenue Groupe 3 !</h1>
-  <p>Page dédiée à votre groupe.</p>
-  <h1> Groupe 3 - Etape 1</h1>
-  
-  <div class="question-block">
-    <h3> Énigme : </h3>
-      <p>Festival de sons où l’on écoute des musiques actuelles, <br>
+   <h1>Bienvenue Groupe 2  </h1>
+   <p>Page dédiée à votre groupe.</p>
+  <h2>Votre thème : Usines et entreprises</h2>
+  <p>Vous devez visiter 4 lieux, un par un.<br>
+À chaque étape, répondez à la question et trouvez le code sur place (il est collé sur le support où se trouve la réponse).<br>
+Notez ce code dans le cadre ci-dessous pour accéder à l’étape suivante.<br>
+Notez également chaque réponse sur votre fiche. À la fin du rallye, vous devrez les annoncer devant tous les élèves de STI2D.<br>
+</p>
+
+Dans 5 minutes, vous recevrez un premier indice, puis un deuxième 5 minutes plus tard, et enfin un troisième indice.</p>
+
+   <div class="question-block">
+    <h3>Question 1 :</h3>
+    <p>Festival de sons où l’on écoute des musiques actuelles, <br>
 Où le cirque déploie ses étoiles sous la coupole, <br>
 Ici, la danse dialogue avec le théâtre et les arts de la rue, <br>
 Rencontres possibles avec les artistes lors des répétitions publiques, <br>
@@ -21,21 +27,23 @@ Au fil de la saison, la programmation reste variée,<br>
 Imagine un lieu qui invite au contact et à l’échange, <br>
 Là, tu trouveras la scène qui t’attend. </p>
 <p>Question : Quel est le nom précis du lieu ?..... </p><br>
+     <p> <img src="images/Theatre.jpg" alt="Theatre" width="300" height="200" align=”middle>
 
-    <img src="images/Theatre.jpg" alt="Theatre" width="300" height="200" >
-    
-    
-       
-    <input type="text" id="codeQuestion" placeholder="Code de validation (ex : QST1)">
+     
+    <input type="text" id="codeQuestion" placeholder="Code de validation (ex : QST2)">
     <button onclick="verifierCodeQuestion()">Valider</button>
     <p id="erreur" style="color: red; display: none;">Code incorrect. Essayez encore.</p>
-     <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1 :Musiques actuelles, cirque, danse, théâtre, arts de la rue. <br>
-       On peut y rencontrer les artistes pendant des répétitions publiques. Commence par « Théâtre du ... ». <br> </p>  
-    <p id="indice2" style="display: none; color: blue; font-style: italic;">💡 Indice 2 : Théâtre du Foirail . Avenue du Général de Gaulle 105 , 49120 Chemillé-Melay . <br>
+
+     
+    <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1 :Musiques actuelles, cirque, danse, théâtre, arts de la rue. <br>
+       On peut y rencontrer les artistes pendant des répétitions publiques. Commence par « Théâtre du ... ». <br> </p>
+               
+    <p id="indice2" style="display: none; color: blue; font-style: italic;"> 💡💡 Indice 2 : Théâtre du Foirail . Avenue du Général de Gaulle 105 , 49120 Chemillé-Melay . <br>
       Allez à ce lieu. Sur place, notez le titre d’un prochain spectacle affiché. 
    éponse, trouvez ensuite le code collé sur un support métallique non loin de l’endroit où vous avez trouvé la réponse.</p>
-    <p id="indice3" style="display: none; color: blue; font-style: italic;">💡 Indice 3 :  Le code correspond au nom du théâtre, écrit en majuscules et sans espace.</p>
-  </div>
+   <p id="indice3" style="display: none; color: blue; font-style: italic;">💡💡💡 Indice 3 :  Le code correspond au nom du théâtre, écrit en majuscules et sans espace.</p>
+   
+</div>
 
   <script>
     let indice1Timeout, indice2Timeout, indice3Timeout;
@@ -48,7 +56,8 @@ Là, tu trouveras la scène qui t’attend. </p>
       indice2Timeout = setTimeout(() => {
         document.getElementById("indice2").style.display = "block";
       }, 1 * 60 * 1000);
-      indice1Timeout = setTimeout(() => {
+
+      indice3Timeout = setTimeout(() => {
         document.getElementById("indice3").style.display = "block";
       }, 1.5 * 60 * 1000);
     }
@@ -60,7 +69,7 @@ Là, tu trouveras la scène qui t’attend. </p>
       const erreur = document.getElementById("erreur");
 
       const nextPages = {
-        "THEATREDUFOIRAIL" || "FOIRAIL" : "groupe3-etape2.html",
+      "THEATREDUFOIRAIL" || "FOIRAIL": "groupe2-etape1.html",
        
       };
 
@@ -76,5 +85,4 @@ Là, tu trouveras la scène qui t’attend. </p>
   </script>
 </body>
 </html>
-</body>
-</html>
+  
