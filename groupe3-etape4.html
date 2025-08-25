@@ -2,11 +2,11 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Groupe 2 - Étape 3</title>
+  <title>Groupe 3 - Étape 4</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Groupe 2 — Étape 3</h1>
+  <h1>Groupe 3 — Étape 4</h1>
     <div class="question-block">
        <strong>Énigme :</strong> 01001111 01000110 01000110 01001001 01000011 01000101 00100000 01000100 01000101 00100000
       01010100 01001111 01010101 01010010 01001001 01010011 01001101 01000101 <br>
@@ -39,9 +39,13 @@ Chaque groupe de 8 chiffres est une lettre en code ASCII binaire. Décodez pour 
   let timer3 = setTimeout(() => {
     document.getElementById("indice3").style.display = "block";
   }, 1.5 * 60 * 1000);
+    
+    function normalize(str) {
+      return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase().replace(/\s+/g, '');
+    }
 
   function verifierCodeQuestion() {
-    const code = document.getElementById("codeQuestion").value.trim();
+    const code = normalize(document.getElementById("codeQuestion").value);
     const erreur = document.getElementById("erreur");
     const success = document.getElementById("indice3");
     const finalMsg = document.getElementById("finalMessage");
