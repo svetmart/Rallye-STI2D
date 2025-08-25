@@ -8,21 +8,22 @@
 <body>
   <h1>Groupe 3 — Étape 4</h1>
     <div class="question-block">
-      <p> <strong>Énigme  <br>
+      <p> <strong>Énigme</strong>  <br>
 <p>01001111 01000110 01000110 01001001 01000011 01000101 00100000 01000100 01000101 00100000 01010100
         01001111 01010101 01010010 01001001 01010011 01001101 01000101 </p>
         Chaque groupe de 8 chiffres est une lettre en code ASCII binaire. Décodez pour trouver le lieu. 
-      </strong></p>
-       
+     </p>
+        <img src="images/ascii-code-table.jpg" alt="ascii" width="500" height="400" align=”middle">  <br>
 
     <input type="text" id="codeQuestion" placeholder="Code de validation (ex : QST4)">
     <button onclick="verifierCodeQuestion()">Valider</button>
 
     <p id="erreur" style="color: red; display: none;">❌ Code incorrect. Essayez encore.</p>
-    <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1 : Suis les panneaux vers l’autoroute A87, sans quitter Charles de Gaulle.</p>
-    <p id="indice2" style="display: none; color: blue; font-style: italic;">💡 Indice 2 : Tu croiseras à nouveau la route nationale, juste avant de quitter Chemillé.
-    <br> Prenez une photo d'une infrastructure autoroutière située sur le rond-point. </p>
-    <p id="indice3" style="display: none; color: green; font-style: italic;"> AUTO4 </p>
+    <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1 : Office de tourisme </p>
+    <p id="indice2" style="display: none; color: blue; font-style: italic;">💡 Indice 2 : 1 Rue de l'Arzillé  49120 CHEMILLE-EN-ANJOU .
+      Consultez les horaires d’ouverture de l’office de tourisme. Code à saisir , en majuscules et sans accent : 
+      la réponse à la question “L’office de tourisme est‑il ouvert maintenant ?” . </p>
+    <p id="indice3" style="display: none; color: green; font-style: italic;"> NON </p>
     <p id="finalMessage" style="display: none; color: darkgreen; font-weight: bold; font-size: 18px;">✅ Bravo ! Code correct. Vous avez terminé le rallye !</p>
   </div>
 
@@ -46,7 +47,7 @@
       const success = document.getElementById("indice3");
       const finalMsg = document.getElementById("finalMessage");
 
-      if (code === "AUTO4") {
+      if (code === "NON") {
         clearTimeout(timer1);
         clearTimeout(timer2);
         clearTimeout(timer3);
