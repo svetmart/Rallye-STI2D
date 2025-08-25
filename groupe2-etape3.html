@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Groupe 2 - Étape 2</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <h1> Groupe 2 - Etape 2</h1>
+  
+  <div class="question-block">
+    <h3> Énigme : </h3>
+      <p>Près du Super U, un nouvel automate vous attend.
+Il avale les bouteilles en plastique et en échange, il vous remet un bon d’achat.
+Trier et rapporter vos bouteilles, c’est un geste écologique qui protège la planète… et qui peut rapporter !
+Dans la journée, l’automate qui collecte les bouteilles enregistre chaque dépôt dans un fichier stocké sur le serveur.
+    • L’enregistrement d’une bouteille occupe 5 ko.
+    • 20 personnes ont utilisé l’automate, 10 bouteilles chacune.
+   
+Questions :
+    1. Quelle est la place totale occupée sur le serveur à la fin de la journée ?
+    2. Quelle est la somme totale du bon d’achat émis par l’automate ?
+Code à rendre : réponse coût total (sans espaces, sans lettres, uniquement les chiffres ).
+    
+  </p>  
+    
+       
+    <input type="text" id="codeQuestion" placeholder="Code de validation (ex : QST1)">
+    <button onclick="verifierCodeQuestion()">Valider</button>
+    <p id="erreur" style="color: red; display: none;">Code incorrect. Essayez encore.</p>
+     <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1 : Ouest Decolletage   </p>  
+    <p id="indice2" style="display: none; color: blue; font-style: italic;">💡 Indice 2 : Adresse postale: Z.I. du Bompas , 09 Rue de Bellevue  49120 Chemillé en Anjou  </p>  
+    <p id="indice3" style="display: none; color: blue; font-style: italic;">💡 Indice 3 : Code : DEC9</p>
+  </div>
+
+  <script>
+    let indice1Timeout, indice2Timeout, indice3Timeout;
+
+    function lancerTimers() {
+      indice1Timeout = setTimeout(() => {
+        document.getElementById("indice1").style.display = "block";
+      }, 0.5 * 60 * 1000);
+
+      indice2Timeout = setTimeout(() => {
+        document.getElementById("indice2").style.display = "block";
+      }, 1 * 60 * 1000);
+      indice1Timeout = setTimeout(() => {
+        document.getElementById("indice3").style.display = "block";
+      }, 1.5 * 60 * 1000);
+    }
+
+    lancerTimers();
+
+    function verifierCodeQuestion() {
+      const code = document.getElementById("codeQuestion").value.trim();
+      const erreur = document.getElementById("erreur");
+
+      const nextPages = {
+        "DEC9": "groupe2-etape3.html",
+       
+      };
+
+      if (nextPages[code]) {
+        clearTimeout(indice1Timeout);
+        clearTimeout(indice2Timeout);
+        clearTimeout(indice3Timeout);
+        window.location.href = nextPages[code];
+      } else {
+        erreur.style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
