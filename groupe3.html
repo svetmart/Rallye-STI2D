@@ -13,27 +13,28 @@
   
   <div class="question-block">
     <h3> Énigme : </h3>
-      <p>..... </p><br>
+      <p>Festival de sons où l’on écoute des musiques actuelles, <br>
+Où le cirque déploie ses étoiles sous la coupole, <br>
+Ici, la danse dialogue avec le théâtre et les arts de la rue, <br>
+Rencontres possibles avec les artistes lors des répétitions publiques, <br>
+Au fil de la saison, la programmation reste variée,<br>
+Imagine un lieu qui invite au contact et à l’échange, <br>
+Là, tu trouveras la scène qui t’attend. <br>
+Question : Quel est le nom précis du lieu ?..... </p><br>
 
-    <img src="images/la_gare.jpg" alt="La gare" width="300" height="200" >
+    <img src="images/Theatree.jpg" alt="Theatre" width="300" height="200" >
     
     
        
     <input type="text" id="codeQuestion" placeholder="Code de validation (ex : QST1)">
     <button onclick="verifierCodeQuestion()">Valider</button>
     <p id="erreur" style="color: red; display: none;">Code incorrect. Essayez encore.</p>
-     <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1 : ...... <br>
-....... </p>  
-    <div id="indice2" style="display: none; color: blue; font-style: italic;">💡 Indice 2 : .....
-    <span style="color: black;">  <h3>Question 1 :</h3>
-     Combien y a-t-il d'arrêts de train en gare de Chemillé chaque jour ? <br>
-      Quelle est l’amplitude horaire ? <br>
-      Prenez une photo de l’affichage des horaires. <br>
-      Notez les réponses sur votre feuille.  </span><br>
-        <p> Une fois que vous avez trouvé la réponse, trouvez ensuite le code collé sur un support métallique non loin de l’endroit où vous avez trouvé la réponse.</p>
-    </div>  
-
-    <p id="indice3" style="display: none; color: blue; font-style: italic;">💡 Indice 3 : GARE8</p>
+     <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1 :Musiques actuelles, cirque, danse, théâtre, arts de la rue. <br>
+       On peut y rencontrer les artistes pendant des répétitions publiques. Commence par « Théâtre du ... ». <br> </p>  
+    <p id="indice2" style="display: none; color: blue; font-style: italic;">💡 Indice 2 : Théâtre du Foirail . Avenue du Général de Gaulle 105 , 49120 Chemillé-Melay . <br>
+      Allez à ce lieu. Sur place, notez le titre d’un prochain spectacle affiché. 
+   éponse, trouvez ensuite le code collé sur un support métallique non loin de l’endroit où vous avez trouvé la réponse.</p>
+    <p id="indice3" style="display: none; color: blue; font-style: italic;">💡 Indice 3 :  Le code correspond au nom du théâtre, écrit en majuscules et sans espace.</p>
   </div>
 
   <script>
@@ -59,7 +60,7 @@
       const erreur = document.getElementById("erreur");
 
       const nextPages = {
-        "GARE8": "groupe1-etape3.html",
+        "THEATREDUFOIRAIL" || "FOIRAIL" : "groupe3-etape2.html",
        
       };
 
