@@ -14,23 +14,20 @@
       inclinée du Christ sur la croix ; la nef fut élargie au début du 20ème siècle. <br>
       À noter (transept gauche) le vitrail du “Pater des Vendéens” rappelant le pardon accordé par le général d’Elbée <br>
       aux 400 prisonniers républicains enfermés dans l’église lors du grand choc de Chemillé le 11 avril 1793.<br></p>
-    <p>Cet endroit est relié au château des Cloîtres et à la salle du Prieuré, dont le plafond ressemble à une coque de bateau renversée.</p>
+   
 
-Question : Quel est le nom de ce lieu ? Rendez-vous à l’endroit marqué par la croix rouge sur la photo <br>
+Question : Quel est le nom de ce lieu ? <br>
    <img src="images/eglise st pierre.jpg" alt="barrage-el" width="500" height="400" align=”middle">  <br>
     
     <input type="text" id="codeQuestion" placeholder="Code de validation (ex : QST1)">
     <button onclick="verifierCodeQuestion()">Valider</button>
     <p id="erreur" style="color: red; display: none;">Code incorrect. Essayez encore.</p>
-     <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1 : Barrage – Coulée verte. 
-      Allez jusqu’à l’extrémité du barrage et notez la phrase qui est masquée sur la photo : c’est votre code, en minuscules et sans espace. <br>  
-    <img src="images/barrage-el.jpg" alt="barrage" width="300" height="200" align=”middle"> </p>
-    <div id="indice2" style="display: none; color: blue; font-style: italic;">💡 Indice 2 :Entrée avant de la Coulvée.
-      L’endroit entouré en rouge sur la carte Google Maps 
-    <img src="images/barrage-carte.jpg" alt="barrage" width="300" height="200" align=”middle">
-       </div>  
+     <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1 :Cet endroit est relié au château des Cloîtres et à la salle du Prieuré, dont le plafond ressemble à une coque de bateau renversée.. <br>  
+   </p>
+    <div id="indice2" style="display: none; color: blue; font-style: italic;">💡 Indice 2 :  L'église est située dans le bourg Saint-Pierre de Chemillé, rue de l’Astrée. Code : nom de l’Église (tout attaché, en minuscules)
+     <div>
 
-    <p id="indice3" style="display: none; color: blue; font-style: italic;">💡 Indice 3 : dangeraccésinterdit</p>
+    <p id="indice3" style="display: none; color: blue; font-style: italic;">💡 Indice 3 : stpierre</p>
   </div>
 
   <script>
@@ -56,7 +53,7 @@ Question : Quel est le nom de ce lieu ? Rendez-vous à l’endroit marqué par l
       const erreur = document.getElementById("erreur");
 
       const nextPages = {
-        "dangeraccésinterdit": "groupe4-etape3.html",
+        "stpierre": "groupe4-etape3.html",
        
       };
 
