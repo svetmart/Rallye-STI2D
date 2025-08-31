@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Groupe 5 - Étape 3</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <h1> Groupe 5 - Etape 3</h1>
+  
+  <div class="question-block">
+    <h3> Énigme : </h3>
+    <p> Je garde en moi les histoires du monde entier.<br>
+On me trouve rue du 01010000 01100101 01110100 01101001 01110100 00100000 <br>
+01000010 01101111 01110101 01110010 01100111.<br>
+Je porte le nom d’un grand écrivain français né en 1802 et mort en 1885.<br>
+Qui suis-je ? Utilise la table ASCII pour trouver la réponse. Notez les réponses sur votre feuille. <br></p>
+   
+
+Question : Quel est le nom de ce lieu ? <br>
+   <img src="images/eglise st pierre.jpg" alt="barrage-el" width="500" height="400" align=”middle">  <br>
+    
+    <input type="text" id="codeQuestion" placeholder="Code de validation (ex : QST1)">
+    <button onclick="verifierCodeQuestion()">Valider</button>
+    <p id="erreur" style="color: red; display: none;">Code incorrect. Essayez encore.</p>
+     <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1 :La médiathèque se situe rue du Petit Bourg.. <br>  
+   </p>
+    <div id="indice2" style="display: none; color: blue; font-style: italic;">💡 Indice 2 : Continuez tout droit : vous trouverez un édifice du XIXᵉ siècle, <br>
+      situé près de la médiathèque, quasiment en face de la rue de la Fontaine. <br>
+Son mécanisme très particulier, unique en Anjou, est sans doute l’œuvre de techniciens locaux.<br>
+Son plancher mobile est actionné par un système ingénieux permettant une remontée continue de l’avant de tout le plancher. <br>
+Code : Quel est l’édifice du XIXᵉ siècle présent ? (en minuscules et tout attaché) 
+     <div>
+
+    <p id="indice3" style="display: none; color: blue; font-style: italic;">💡 Indice 3 : lelavoir</p>
+  </div>
+
+  <script>
+    let indice1Timeout, indice2Timeout, indice3Timeout;
+
+    function lancerTimers() {
+      indice1Timeout = setTimeout(() => {
+        document.getElementById("indice1").style.display = "block";
+      }, 0.5 * 60 * 1000);
+
+      indice2Timeout = setTimeout(() => {
+        document.getElementById("indice2").style.display = "block";
+      }, 1 * 60 * 1000);
+      indice1Timeout = setTimeout(() => {
+        document.getElementById("indice3").style.display = "block";
+      }, 1.5 * 60 * 1000);
+    }
+
+    lancerTimers();
+
+    function verifierCodeQuestion() {
+      const code = document.getElementById("codeQuestion").value.trim();
+      const erreur = document.getElementById("erreur");
+
+      const nextPages = {
+        "lelavoir": "groupe5-etape4.html",
+       
+      };
+
+      if (nextPages[code]) {
+        clearTimeout(indice1Timeout);
+        clearTimeout(indice2Timeout);
+        clearTimeout(indice3Timeout);
+        window.location.href = nextPages[code];
+      } else {
+        erreur.style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
