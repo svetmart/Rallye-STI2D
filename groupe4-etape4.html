@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Groupe 4 - Étape 4</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Groupe 4 — Étape 4</h1>
+    <div class="question-block">
+       <strong>Énigme :</strong> At Fibertex Nonwovens, we pioneer and innovate the way industries work<br>
+      with nonwovens and performance materials. We enable our customers to create high-performance and sustainable solutions,<br>
+      that improve the quality of life for people.<br>
+      
+<p>Dans cette entreprise, on ne tisse pas des mots, on tisse la matière. <br>
+Les fibres s’entrecroisent comme des données. <br>
+Trouve le numéro écrit en langage machine : 00000011. <br>
+Ajoute le symbole qui signifie croisement. <br>
+Termine par un nom qui mêle Renaud et de l’eau. <br>
+Quelle est l’adresse complète ?.<br></p>
+Question : Quelle est l’activité de cette entreprise ? Pour quels secteurs travaille-t-elle ?
+Notez vos réponses sur la feuille et présentez-les lors du briefing après le rallye. <br>
+ 
+
+    <input type="text" id="codeQuestion" placeholder="Code de validation (ex : QST4)">
+    <button onclick="verifierCodeQuestion()">Valider</button>
+
+    <p id="erreur" style="color: red; display: none;">❌ Code incorrect. Essayez encore.</p>
+    <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1 : FIBERTEX</p>
+    <p id="indice2" style="display: none; color: blue; font-style: italic;">💡 Indice 2 :  Adresse postale : Z.I. du Bompas , 09 Rue de Bellevue  49120 Chemillé en Anjou.   </p>
+    <p id="indice3" style="display: none; color: green; font-style: italic;"> 💡 Indice 3 : legénéraldegaulle </p>
+    <p id="finalMessage" style="display: none; color: darkgreen; font-weight: bold; font-size: 18px;">✅ Bravo ! Code correct. Vous avez terminé le rallye !</p>
+  </div>
+
+  <script>
+  // 30 секунд
+  let timer1 = setTimeout(() => {
+    document.getElementById("indice1").style.display = "block";
+  }, 0.5 * 60 * 1000);
+
+  // 60 секунд
+  let timer2 = setTimeout(() => {
+    document.getElementById("indice2").style.display = "block";
+  }, 1 * 60 * 1000);
+
+  // 90 секунд — просто показать, не менять текст!
+  let timer3 = setTimeout(() => {
+    document.getElementById("indice3").style.display = "block";
+  }, 1.5 * 60 * 1000);
+
+  function verifierCodeQuestion() {
+    const code = document.getElementById("codeQuestion").value.trim();
+    const erreur = document.getElementById("erreur");
+    const success = document.getElementById("indice3");
+    const finalMsg = document.getElementById("finalMessage");
+
+    if (code === "DEC9") {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+      clearTimeout(timer3);
+      erreur.style.display = "none";
+      success.style.display = "block";   // показываем «Indice 3 : DEC9»
+      finalMsg.style.display = "block";
+    } else {
+      erreur.style.display = "block";
+     
+      finalMsg.style.display = "none";
+    }
+  
+    }
+  </script>
+</body>
+</html>
