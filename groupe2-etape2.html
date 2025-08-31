@@ -6,34 +6,30 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <h1> Groupe 2 - Etape 2</h1>
-  
-  <div class="question-block">
-    <h3> Énigme : </h3>
-      <p>Près du Super U, un nouvel automate vous attend.
-Il avale les bouteilles en plastique et en échange, il vous remet un bon d’achat.
-Trier et rapporter vos bouteilles, c’est un geste écologique qui protège la planète… et qui peut rapporter !
-Dans la journée, l’automate qui collecte les bouteilles enregistre chaque dépôt dans un fichier stocké sur le serveur.
-    • L’enregistrement d’une bouteille occupe 5 ko.
-    • 20 personnes ont utilisé l’automate, 10 bouteilles chacune.
-   
-Questions :
-    1. Quelle est la place totale occupée sur le serveur à la fin de la journée ?
-    2. Quelle est la somme totale du bon d’achat émis par l’automate ?
-Code à rendre : réponse coût total (sans espaces, sans lettres, uniquement les chiffres ).
-    
-  </p>  
-    
-       
-    <input type="text" id="codeQuestion" placeholder="Code de validation (ex : QST1)">
+   < <h1>Groupe 2 — Étape 2</h1>
+    <div class="question-block">
+       <strong>Énigme :</strong> Je suis un leader de l’usinage de précision et du décolletage dans le Grand Ouest.<br>
+Je maîtrise le décolletage de précision pour tous les secteurs industriels et pour toutes les matières :
+inox, aciers, aluminium, titane, cuivreux, plastiques, composites, etc.
+Qui suis-je ?    La réponse est le nom de l’entreprise. <br>
+
+<p>Lis les premières lettres de chaque ligne (c’est une adresse où vous devez aller).:
+Robotique et Usine se croisent ici.
+Et c’est là que mène ton pas.
+Direction : nom en Unique exemplaire.
+Bravo Opérateurs Mécaniciens Programmeurs Ajusteurs Soudeurs.  
+ La réponse est le nom de l’entreprise (c’est une adresse où vous devez aller).<br></p>p
+Question : Quelle est l’activité de cette entreprise ? Pour quels secteurs travaille-t-elle ?
+Notez vos réponses sur la feuille et présentez-les lors du briefing après le rallye. <br>
+ 
+
+    <input type="text" id="codeQuestion" placeholder="Code de validation (ex : QST4)">
     <button onclick="verifierCodeQuestion()">Valider</button>
-    <p id="erreur" style="color: red; display: none;">Code incorrect. Essayez encore.</p>
-     <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1 : Va au Super U. (piste : près du parking, cherche l’automate des bouteilles)  </p>  
-    <p id="indice2" style="display: none; color: blue; font-style: italic;">💡 Indice 2 : Près du casier  Mondial Relay Locker, Rue du Bompas, 49120 Chemillé-en-Anjou  </p>  
-    <p id="indice3" style="display: none; color: blue; font-style: italic;">💡 Indice 3 :Bouteilles : 20 × 10 = 200 bouteilles
-    • Espace : 200 × 5 ko = 1000 ko ≈ 1 Mo
-    • Bon d’achat : 200 × 0,01 € = 2,00 €
-    • Code : 10002</p>
+
+    <p id="erreur" style="color: red; display: none;">❌ Code incorrect. Essayez encore.</p>
+    <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1 :  Ouest Decolletage</p>
+    <p id="indice2" style="display: none; color: blue; font-style: italic;">💡 Indice 2 :  Adresse postale : Z.I. du Bompas , 09 Rue de Bellevue  49120 Chemillé en Anjou.   </p>
+    <p id="indice3" style="display: none; color: green; font-style: italic;"> 💡 Indice 3 : DEC9 </p>
   </div>
 
   <script>
