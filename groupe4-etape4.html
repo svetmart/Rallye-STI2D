@@ -54,7 +54,10 @@ Code : Quel est cet homme politique qui séjourna dans ce château (sans espace
     const success = document.getElementById("indice3");
     const finalMsg = document.getElementById("finalMessage");
 
-    if (code === "legénéraldegaulle") {
+    // список всех правильных кодов
+  const codesValides = ["legénéraldegaulle", "degaulle", "généraldegaulle", "legénéraldegaulle"];
+    
+    if (codesValides.includes(code)) {
       clearTimeout(timer1);
       clearTimeout(timer2);
       clearTimeout(timer3);
