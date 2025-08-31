@@ -1,13 +1,85 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Groupe 5</title>
+  <title>Groupe 5 - Étape 1</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Bienvenue Groupe 5 !</h1>
-  <p>Page dédiée à votre groupe.</p>
+   <h1>Bienvenue Groupe 5  </h1>
+   <p>Page dédiée à votre groupe.</p>
+  <h2>Votre thème : Culture</h2>
+  <p>Vous devez visiter 4 lieux, un par un.<br>
+À chaque étape, répondez à la question et trouvez le code sur place (il est collé sur le support où se trouve la réponse).<br>
+Notez ce code dans le cadre ci-dessous pour accéder à l’étape suivante.<br>
+Notez également chaque réponse sur votre fiche. À la fin du rallye, vous devrez les annoncer devant tous les élèves de STI2D.<br>
+</p>
+
+<p>Dans quelques minutes, vous recevrez un premier indice, puis un deuxième dans quelques minutes plus tard, et enfin un troisième indice.</p>
+
+   <div class="question-block">
+    <h3>Question 1 :</h3>
+    <p>Lieu : <br>
+Ce château a été construit par l’architecte angevin dans la seconde moitié du 19ème siècle, près des vestiges de l’ancien prieuré bénédictin <br>
+dont il abrite une partie des vestiges du cloître. Il est caractéristique d’une restauration de demeure bourgeoise dans le style néo-gothique.<br>
+Adresse : <br>
+Mon chiffre est le plus petit nombre pair.<br>
+Mon nom est celui d’une déesse qui porte les étoiles. <br>
+Réunis-nous et tu trouveras ton chemin. <br>
+Code : nom de l’architecte ?</p><br>
+     <p> <img src="images/chateaudescloitres.jpeg" alt="chateau" width="300" height="200" align=”middle"></p>
+
+     
+    <input type="text" id="codeQuestion" placeholder="Code de validation (ex : QST2)">
+    <button onclick="verifierCodeQuestion()">Valider</button>
+    <p id="erreur" style="color: red; display: none;">Code incorrect. Essayez encore.</p>
+
+     
+    <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1 : C’est un lieu pas loin du lycée. <br> </p>
+               
+    <p id="indice2" style="display: none; color: blue; font-style: italic;"> 💡💡 Indice 2 : 2 rue de l’Astrée. 
+   <p id="indice3" style="display: none; color: blue; font-style: italic;">💡💡💡 Indice 3 : CLO6  </p>
+   
+</div>
+
+  <script>
+    let indice1Timeout, indice2Timeout, indice3Timeout;
+
+    function lancerTimers() {
+      indice1Timeout = setTimeout(() => {
+        document.getElementById("indice1").style.display = "block";
+      }, 0.5 * 60 * 1000);
+
+      indice2Timeout = setTimeout(() => {
+        document.getElementById("indice2").style.display = "block";
+      }, 1 * 60 * 1000);
+
+      indice3Timeout = setTimeout(() => {
+        document.getElementById("indice3").style.display = "block";
+      }, 1.5 * 60 * 1000);
+    }
+
+    lancerTimers();
+
+    function verifierCodeQuestion() {
+      const code = document.getElementById("codeQuestion").value.trim();
+      const erreur = document.getElementById("erreur");
+
+      const nextPages = {
+      "CLO6": "groupe5-etape2.html",
+       
+      };
+
+      if (nextPages[code]) {
+        clearTimeout(indice1Timeout);
+        clearTimeout(indice2Timeout);
+        clearTimeout(indice3Timeout);
+        window.location.href = nextPages[code];
+      } else {
+        erreur.style.display = "block";
+      }
+    }
+  </script>
 </body>
 </html>
+  
