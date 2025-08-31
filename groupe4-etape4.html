@@ -8,26 +8,25 @@
 <body>
   <h1>Groupe 4 — Étape 4</h1>
     <div class="question-block">
-       <strong>Énigme :</strong> At Fibertex Nonwovens, we pioneer and innovate the way industries work<br>
-      with nonwovens and performance materials. We enable our customers to create high-performance and sustainable solutions,<br>
-      that improve the quality of life for people.<br>
+       <strong>Énigme :</strong>
       
-<p>Dans cette entreprise, on ne tisse pas des mots, on tisse la matière. <br>
-Les fibres s’entrecroisent comme des données. <br>
-Trouve le numéro écrit en langage machine : 00000011. <br>
-Ajoute le symbole qui signifie croisement. <br>
-Termine par un nom qui mêle Renaud et de l’eau. <br>
-Quelle est l’adresse complète ?.<br></p>
-Question : Quelle est l’activité de cette entreprise ? Pour quels secteurs travaille-t-elle ?
-Notez vos réponses sur la feuille et présentez-les lors du briefing après le rallye. <br>
+      chateau_de_l_echo
+     Le château est construit par René Hodé en 1867-1868 pour la famille Gourdon. C’est là que vécu Pierre Gourdon, écrivain local disciple de René Bazin.<br>
+    Une plaque apposée à l’entrée rappelle qu’un homme politique célèbre y séjourna plusieurs fois. À noter, les écuries qui portent l’inscription « Alleluia » <br>
+ 
+<p>Pour trouver ce lieu, suivre l’itinéraire suivant :
+A partir du lavoir, prendre la rue du Pissouet, puis tourner à droite rue du Valbourg et remonter jusqu’à la rue Nationale, prendre la direction d’Angers, puis immédiatement après le pont tourner à droite pour prendre le chemin qui longe la rivière portant le nom du lycée.
+Continuez ce chemin pendant environ 1 kilomètre jusqu’à apercevoir l’arrière du château de l’Echo.</p><br>
+Prendre une photo de l’arrière du château .
+Code : Quel est cet homme politique qui séjourna dans ce château (sans espaces et en minuscules )? <br>
  
 
     <input type="text" id="codeQuestion" placeholder="Code de validation (ex : QST4)">
     <button onclick="verifierCodeQuestion()">Valider</button>
 
     <p id="erreur" style="color: red; display: none;">❌ Code incorrect. Essayez encore.</p>
-    <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1 : FIBERTEX</p>
-    <p id="indice2" style="display: none; color: blue; font-style: italic;">💡 Indice 2 :  Adresse postale : Z.I. du Bompas , 09 Rue de Bellevue  49120 Chemillé en Anjou.   </p>
+    <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1 : Le château de l’Echo (privé)</p>
+    <p id="indice2" style="display: none; color: blue; font-style: italic;">💡 Indice 2 :  Adresse postale :    </p>
     <p id="indice3" style="display: none; color: green; font-style: italic;"> 💡 Indice 3 : legénéraldegaulle </p>
     <p id="finalMessage" style="display: none; color: darkgreen; font-weight: bold; font-size: 18px;">✅ Bravo ! Code correct. Vous avez terminé le rallye !</p>
   </div>
@@ -54,7 +53,7 @@ Notez vos réponses sur la feuille et présentez-les lors du briefing après le 
     const success = document.getElementById("indice3");
     const finalMsg = document.getElementById("finalMessage");
 
-    if (code === "DEC9") {
+    if (code === "legénéraldegaulle") {
       clearTimeout(timer1);
       clearTimeout(timer2);
       clearTimeout(timer3);
