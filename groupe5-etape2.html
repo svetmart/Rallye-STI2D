@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Groupe 4 - Étape 2</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <h1> Groupe 4 - Etape 2</h1>
+  
+  <div class="question-block">
+    <h3> Énigme : </h3>
+    <p>  De style roman, elle a la particularité du chœur incliné par rapport à la nef pour rappeler la tête <br>
+      inclinée du Christ sur la croix ; la nef fut élargie au début du 20ème siècle. <br>
+      À noter (transept gauche) le vitrail du “Pater des Vendéens” rappelant le pardon accordé par le général d’Elbée <br>
+      aux 400 prisonniers républicains enfermés dans l’église lors du grand choc de Chemillé le 11 avril 1793.<br></p>
+   
+
+Question : Quel est le nom de ce lieu ? <br>
+   <img src="images/eglise st pierre.jpg" alt="barrage-el" width="500" height="400" align=”middle">  <br>
+    
+    <input type="text" id="codeQuestion" placeholder="Code de validation (ex : QST1)">
+    <button onclick="verifierCodeQuestion()">Valider</button>
+    <p id="erreur" style="color: red; display: none;">Code incorrect. Essayez encore.</p>
+     <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1 :Cet endroit est relié au château des Cloîtres et à la salle du Prieuré, dont le plafond ressemble à une coque de bateau renversée.. <br>  
+   </p>
+    <div id="indice2" style="display: none; color: blue; font-style: italic;">💡 Indice 2 :  L'église est située dans le bourg Saint-Pierre de Chemillé, rue de l’Astrée. Code : nom de l’Église (tout attaché, en minuscules)
+     <div>
+
+    <p id="indice3" style="display: none; color: blue; font-style: italic;">💡 Indice 3 : stpierre</p>
+  </div>
+
+  <script>
+    let indice1Timeout, indice2Timeout, indice3Timeout;
+
+    function lancerTimers() {
+      indice1Timeout = setTimeout(() => {
+        document.getElementById("indice1").style.display = "block";
+      }, 0.5 * 60 * 1000);
+
+      indice2Timeout = setTimeout(() => {
+        document.getElementById("indice2").style.display = "block";
+      }, 1 * 60 * 1000);
+      indice1Timeout = setTimeout(() => {
+        document.getElementById("indice3").style.display = "block";
+      }, 1.5 * 60 * 1000);
+    }
+
+    lancerTimers();
+
+    function verifierCodeQuestion() {
+      const code = document.getElementById("codeQuestion").value.trim();
+      const erreur = document.getElementById("erreur");
+
+      const nextPages = {
+        "stpierre": "groupe4-etape3.html",
+       
+      };
+
+      if (nextPages[code]) {
+        clearTimeout(indice1Timeout);
+        clearTimeout(indice2Timeout);
+        clearTimeout(indice3Timeout);
+        window.location.href = nextPages[code];
+      } else {
+        erreur.style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
