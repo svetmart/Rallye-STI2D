@@ -10,29 +10,25 @@
   
   <div class="question-block">
     <h3> Énigme : </h3>
-    <p> Je garde en moi les histoires du monde entier.<br>
-On me trouve rue du 01010000 01100101 01110100 01101001 01110100 00100000 <br>
-01000010 01101111 01110101 01110010 01100111.<br>
-Je porte le nom d’un grand écrivain français né en 1802 et mort en 1885.<br>
-Qui suis-je ? Utilise la table ASCII pour trouver la réponse. Notez les réponses sur votre feuille. <br></p>
+    <p> Située place des 01010000 01100101 01110010 01110010 01101111 01100011 01101000 01100101 01110010 01100101 01110011 <br>
+      (Chaque groupe de 8 chiffres est une lettre en code ASCII binaire. Décodez pour trouver le lieu, é=e), l’église est construite de 1879 à 1884 pour <br>
+      remplacer l’ancienne église Notre-Dame, devenue trop petite. Son architecture de style roman de transition (entre le roman et le gothique) emprunte <br>
+      des éléments à l’Anjou et au Poitou, sans oublier de rappeler l’ancienne église Notre-Dame. À noter une série de vitraux historiés mêlant scènes d’Évangile, <br>
+      vie des Saints et histoire locale (Pétronille, la Sainte-Larme, Saint-Léonard…)<br></p>
    
-
 Question : Quel est le nom de ce lieu ? <br>
-   <img src="images/eglise st pierre.jpg" alt="barrage-el" width="500" height="400" align=”middle">  <br>
+   <img src="images/notre_dame_nouv.jpg" alt="barrage-el" width="500" height="400" align=”middle">  <br>
     
     <input type="text" id="codeQuestion" placeholder="Code de validation (ex : QST1)">
     <button onclick="verifierCodeQuestion()">Valider</button>
     <p id="erreur" style="color: red; display: none;">Code incorrect. Essayez encore.</p>
-     <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1 :La médiathèque se situe rue du Petit Bourg.. <br>  
+     <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1 : Edifice située place des Perrochères<br>  
    </p>
-    <div id="indice2" style="display: none; color: blue; font-style: italic;">💡 Indice 2 : Continuez tout droit : vous trouverez un édifice du XIXᵉ siècle, <br>
-      situé près de la médiathèque, quasiment en face de la rue de la Fontaine. <br>
-Son mécanisme très particulier, unique en Anjou, est sans doute l’œuvre de techniciens locaux.<br>
-Son plancher mobile est actionné par un système ingénieux permettant une remontée continue de l’avant de tout le plancher. <br>
-Code : Quel est l’édifice du XIXᵉ siècle présent ? (en minuscules et tout attaché) 
+    <div id="indice2" style="display: none; color: blue; font-style: italic;">💡 Indice 2 :Quel logotype indique la protection de cet édifice ? Réponse : Monument Historique
+Notez ces éléments sur votre feuille.
      <div>
 
-    <p id="indice3" style="display: none; color: blue; font-style: italic;">💡 Indice 3 : lelavoir</p>
+    <p id="indice3" style="display: none; color: blue; font-style: italic;">💡 Indice 3 : 19 </p>
   </div>
 
   <script>
@@ -58,7 +54,7 @@ Code : Quel est l’édifice du XIXᵉ siècle présent ? (en minuscules et tout
       const erreur = document.getElementById("erreur");
 
       const nextPages = {
-        "lelavoir": "groupe5-etape4.html",
+        "19": "groupe5-etape4.html",
        
       };
 
