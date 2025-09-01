@@ -40,14 +40,14 @@ Code : Quel est l’édifice du XIXᵉ siècle présent ? (en minuscules et tout
     function lancerTimers() {
       indice1Timeout = setTimeout(() => {
         document.getElementById("indice1").style.display = "block";
-      }, 0.5 * 60 * 1000);
+      }, 5 * 60 * 1000);
 
       indice2Timeout = setTimeout(() => {
         document.getElementById("indice2").style.display = "block";
-      }, 1 * 60 * 1000);
+      }, 15 * 60 * 1000);
       indice1Timeout = setTimeout(() => {
         document.getElementById("indice3").style.display = "block";
-      }, 1.5 * 60 * 1000);
+      }, 25 * 60 * 1000);
     }
 
     lancerTimers();
