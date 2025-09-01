@@ -36,17 +36,17 @@ Code : Quel est cet homme politique qui séjourna dans ce château (sans espace
   // 30 секунд
   let timer1 = setTimeout(() => {
     document.getElementById("indice1").style.display = "block";
-  }, 0.5 * 60 * 1000);
+  }, 5 * 60 * 1000);
 
   // 60 секунд
   let timer2 = setTimeout(() => {
     document.getElementById("indice2").style.display = "block";
-  }, 1 * 60 * 1000);
+  }, 15 * 60 * 1000);
 
   // 90 секунд — просто показать, не менять текст!
   let timer3 = setTimeout(() => {
     document.getElementById("indice3").style.display = "block";
-  }, 1.5 * 60 * 1000);
+  }, 25 * 60 * 1000);
 
   function verifierCodeQuestion() {
     const code = document.getElementById("codeQuestion").value.trim();
