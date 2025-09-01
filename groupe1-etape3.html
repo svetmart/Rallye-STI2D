@@ -35,7 +35,7 @@
     <p id="indice2" style="display: none; color: blue; font-style: italic;">
       💡 Indice 2 : Je porte le nom de Paul Boissinot, ancien maire de Chemillé. <br>
         <img src="images/Paul1.jpg" alt="Théâtre" width="300" height="200" align=”middle">
-    </p>
+    </p><br>
     <p id="indice3" style="display: none; color: blue; font-style: italic;">
       💡 Indice 3 :   <img src="images/Paul2.jpg" alt="Théâtre" width="300" height="200" align=”middle"> <br>RD1. 
     </p>
@@ -44,15 +44,15 @@
   <script>
     let timer1 = setTimeout(() => {
       document.getElementById("indice1").style.display = "block";
-    }, 0.5 * 60 * 1000);
+    }, 5 * 60 * 1000);
 
     let timer2 = setTimeout(() => {
       document.getElementById("indice2").style.display = "block";
-    }, 1 * 60 * 1000);
+    }, 15 * 60 * 1000);
 
     let timer3 = setTimeout(() => {
       document.getElementById("indice3").style.display = "block";
-    }, 1.5 * 60 * 1000);
+    }, 25 * 60 * 1000);
 
     function verifierCodeQuestion() {
       const code = document.getElementById("codeQuestion").value.trim();
