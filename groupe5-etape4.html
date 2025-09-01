@@ -12,16 +12,18 @@
       
 24 images par seconde suffisent pour tromper ton œil.
 Ici, elles deviennent histoires, émotions et voyages.
-Où es-tu ?
+Où es-tu ?<br>
+       Quel divertissement sera proposé le samedi 6 septembre à 20h30 (notez cette info) ? <br> Prenez une photo de votre équipe devant ce lieu.<br>
+      Le code est 
  
 
     <input type="text" id="codeQuestion" placeholder="Code de validation (ex : QST4)">
     <button onclick="verifierCodeQuestion()">Valider</button>
 
     <p id="erreur" style="color: red; display: none;">❌ Code incorrect. Essayez encore.</p>
-    <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1 : Cinéma le club. Code : Quel sera le film projeté samedi 6 septembre à 20h30 (en minuscule) ?  Prenez une photo de votre équipe ensemble devant</p>
+    <p id="indice1" style="display: none; color: blue; font-style: italic;">💡 Indice 1 : Cinéma le Club. Code : </p>
     <p id="indice2" style="display: none; color: blue; font-style: italic;">💡 Indice 2 :  Adresse postale :  25 r Venelles    </p>
-    <p id="indice3" style="display: none; color: green; font-style: italic;"> 💡 Indice 3 : dracula </p>
+    <p id="indice3" style="display: none; color: green; font-style: italic;"> 💡 Indice 3 : DRA8 </p>
     <p id="finalMessage" style="display: none; color: darkgreen; font-weight: bold; font-size: 18px;">✅ Bravo ! Code correct. Vous avez terminé le rallye !</p>
   </div>
 
@@ -47,7 +49,7 @@ Où es-tu ?
     const success = document.getElementById("indice3");
     const finalMsg = document.getElementById("finalMessage");
 
-    if (code === "dracula") {
+    if (code === "DRA8") {
       clearTimeout(timer1);
       clearTimeout(timer2);
       clearTimeout(timer3);
